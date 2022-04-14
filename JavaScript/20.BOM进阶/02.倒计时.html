@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-size: 99px;
+            text-align: center;
+            line-height: 300px;
+            color: red;
+        }
+    </style>
+    <script src="common.js"></script>
+    <script>
+        window.onload = function() {
+            function clock() {
+                // 1.获取当前时间
+                var dt = new Date();
+                // 2.截止时间
+                var endTime = new Date("2021/12/10 22:00:00");
+                // 3.转换成毫秒
+                var now = dt.getTime();
+                var end = endTime.getTime();
+                // 4.求差
+                var time = end - now;
+                // 5.毫秒转成秒
+                var seconds = time / 1000;
+                if(seconds > 0) {
+                    var h = Math.floor(seconds / 3600);
+                    var m = Math.floor(seconds % 3600 / 60);
+                    var s = Math.floor(seconds % 60);
+                    my$("downClock").innerText = bu(h) + ":" + bu(m) + ":" + bu(s);
+                }else {
+                    my$("downClock").innerText = "下课了！";
+                    clearInterval(timeId);
+                }
+            }
+            clock();
+            var timeId = setInterval(clock, 1000);
+
+            // 补位
+            function bu(i) {
+                return i < 10 ? "0" + i : i;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1 id="downClock"></h1>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            1.输入年月日，判断这一天是这一年的第几天1999/2/20
+                [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+            2.用户输入班级人数（>=4），根据人数输入成绩，求总成绩、平均成绩、最高分、最低分
+        */
+        // 题1
+        function getday(){
+            var year = parseInt(prompt("请输入年份"));
+            var month = parseInt(prompt("请输入月份"));
+            var day = parseInt(prompt("请输入这月的某一天"));
+            var sum = 0;
+            var num = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            for(var i = 1; i < month; i++)
+            {
+                sum += num[i-1];
+            }
+            // 闰年 且month大于2 sum+1
+            if(year % 4 == 0 && year % 100 != 0)
+            {
+                if(month>2)
+                {
+                    sum += 1;
+                }
+            }
+            sum += day;
+            console.log("这一天是这一年的第"+sum+"天");
+        }
+        getday();
+
+        // 题2
+        function getGrade(){
+            var num = Number(prompt('输入班级人数'));    
+            if(!isNaN(num))
+            {
+                sum = 0;
+                var arr1 = new Array(num);
+                // 存值
+                for(var i = 0; i < arr1.length; i++)
+                {
+                arr1[i] = Number(prompt('请输入第'+(i+1)+"的成绩"));
+                }
+                var maxvalue =arr1[0];
+                var minvalue =arr1[0];
+                // 求和
+                for(var i = 0; i < arr1.length; i++)
+                {               
+                    sum += arr1[i];
+                    // 最大值
+                    if(maxvalue < arr1[i])
+                    {
+                        maxvalue = arr1[i];
+                    }
+                    // 最小值
+                    if(minvalue > arr1[i])
+                    {
+                        minvalue = arr1[i];
+                    }
+                }
+                console.log('总成绩：'+sum);
+                console.log('平均成绩：'+sum/arr1.length);
+                console.log('最大值：'+maxvalue,'最小值'+minvalue);
+            }
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点击</button>
+    <div id="box">
+        <h5>
+            有问题找度娘
+            <a href="">百度一下，你就知道</a>
+        </h5>
+    </div>
+
+    <script>
+        // innerText 置设/获取文本内容，但只是文本内容
+        // innerHTML 置设/获取文本内容，获取所有内容，可以解析标签
+
+        document.getElementById("btn").onclick = function() {
+            var box = document.getElementById("box");
+            // 设置
+            // box.innerText = "<h1>完了，度娘都救不了你！</h1>";
+            box.innerHTML = "<h1>完了，度娘都救不了你！</h1>";
+
+            // 获取
+            // console.log(box.innerText);
+            // console.log(box.innerHTML);
+        }
+    </script>
+</body>
+</html>

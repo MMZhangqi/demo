@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            3.以字面量的方式创建对象
+        */
+
+        var obj = {};
+        obj.name = "勇哥";
+        obj.age = 12;
+        obj.sleep = function() {
+            console.log("困了想睡觉");
+        }
+        // console.log(obj);
+
+        var obj2 = {
+            age: 16,
+            name: "Cherry",
+            eat: function() {
+                console.log("火锅串串烧烤奶茶...");
+            }
+        }
+        // 修改属性值
+        obj2.age = 14;
+        console.log(obj2);
+
+        // 追加属性/方法
+        obj2.sex = "女";
+        obj2.play = function() {
+            console.log("我爱敲代码");
+        }
+        obj2.play();
+
+
+        // 设置属性/方法的另外一种写法：
+        // obj2.height = "173cm";
+        obj2["height"] = "173cm";
+        obj2["dance"] = function() {
+            console.log("跳舞");
+        }
+
+        console.log(obj2);
+        obj2.dance();
+    </script>
+</body>
+</html>

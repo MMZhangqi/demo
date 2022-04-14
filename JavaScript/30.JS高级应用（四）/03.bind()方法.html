@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // bind()：只是绑定的时候改变this，不是在调用的时候改变this
+        function f1(x, y) {
+            console.log(x + y, this);
+        }
+        var ff = f1.bind(null);
+        ff(10, 20);// 可以在复制的时候传参，也可以在复制之后调用的时候传参
+
+        function Person() {}
+        Person.prototype.eat = function() {
+            console.log("eat");
+        }
+        var per = new Person();
+        var fff = f1.bind(per);
+        fff(100, 200);
+
+
+        // var obj = {
+        //     name: "Cherry",
+        //     f2: function() {
+        //         console.log(this.name);
+        //     }
+        // }
+        // var oo = obj.f2;
+        // oo.call(obj);
+
+        /* 
+            总结：
+                ① 传递的参数不多的时候，使用fn.call(需要指向的对象, 参数1, 参数2, ..., 参数n)
+                ② 传递的参数较多的时候，使用fn.apply(需要指向的对象, [参数1, 参数2, ..., 参数n])
+                ③ 只想将函数长期的绑定给某一个对象使用，使用fn.bind(需要指向的对象, 参数1, 参数2, ..., 参数n)
+        */
+    </script>
+</body>
+</html>

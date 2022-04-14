@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点击</button>
+    <div id="box">今天星期一</div>
+    <script>
+        document.getElementById("btn").onclick = function() {
+            // 设置div中的文字
+            var box = document.getElementById("box");
+            box.innerText = "又是全新一天";
+            // box.textContent = "再过四天又放假了";
+            console.log(box.innerText);
+            // console.log(box.textContent);
+        }
+
+        /* 
+            - 使用innerText设置标签中的文本内容，都支持，返回对应的文本内容
+            - 使用textContent设置标签中的文本内容，IE8不支持，修改不了内容
+        */
+    </script>
+</body>
+</html>

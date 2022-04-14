@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: url(images/bg.png) no-repeat center/cover;
+        }
+
+        #fsw {
+            width: 768px;
+            height: 768px;
+            background: url(images/fsw.png);
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            animation: fsw 10s linear infinite;
+        }
+
+        #fsw>img {
+            position: absolute;
+            animation: img 10s linear infinite;
+        }
+
+        #fsw>img:nth-of-type(1) {
+            top: -40px;
+            left: 50%;
+            margin-left: -65px;
+        }
+
+        #fsw>img:nth-of-type(2)  {
+            bottom: 190px;
+            left: 20px;
+        }
+
+        #fsw>img:nth-of-type(3)  {
+            bottom: 200px;
+            right: 10px;
+        }
+
+        @keyframes fsw {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes img {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="fsw">
+        <img src="images/girl.png" alt="">
+        <img src="images/boy.png" alt="">
+        <img src="images/shamegirl.png" alt="">
+    </div>
+</body>
+</html>

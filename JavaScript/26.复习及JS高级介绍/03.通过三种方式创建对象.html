@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 对象：特指某个事物，具有属性和方法
+        // 1.字面量的方式
+        var per1 = {
+            name: "强哥",
+            sex: "不详",
+            eat: function() {
+                console.log("吃了啥，也不详。");
+            }
+        }
+
+        // 2.调用系统的构造函数
+        var per2 = new Object();
+        per2.name = "庄哥";
+        per2.age = "88岁";
+        per2.eat = function() {
+            console.log("rojak");
+        }
+        var per3 = new Object();
+        per3.name = "唐小翔";
+        per3.age = "108岁";
+        per3.eat = function() {
+            console.log("rojak");
+        }
+        // 封装成工厂模式
+        function createPreson(name, age) {
+            var obj = new Object();
+            obj.name = name;
+            obj.age = age;
+            obj.eat = function() {
+                console.log("rojak");
+            }
+            return obj;
+        }
+        var p1 = createPreson("熊大", 12);
+        var p2 = createPreson("熊二", 10);
+        var p3 = createPreson("翠花", 9);
+
+        // 判断对象属于什么类型
+        console.log(p1 instanceof Object);
+        console.log(p2 instanceof Object);
+
+        // 3.自定义构造函数
+        // ① 创建构造函数
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+            this.eat = function() {
+                console.log("在人民广场吃炸鸡");
+            }
+        }
+        // ② 实例化对象
+        var qige = new Person("麒哥", "21岁");
+        qige.eat();
+        console.log(qige instanceof Person);
+    </script>
+</body>
+</html>

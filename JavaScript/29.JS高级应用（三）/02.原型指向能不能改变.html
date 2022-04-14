@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function Person(name, age) {
+        //     this.name = name;
+        //     this.age = age;
+        // }
+        // Person.prototype.eat = function() {
+        //     console.log("强哥要吃糖");
+        // }
+        // Person.prototype = {
+        //     play: function() {
+        //         console.log("滑雪");
+        //     }
+        // }
+        // var per = new Person();
+        // per.eat();// 报错
+
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        Person.prototype.eat = function() {
+            console.log("强哥要吃糖");
+        }
+        var per = new Person();
+
+        function Students() {}
+        Students.prototype.study = function() {
+            console.log("放假也要学习");
+        }
+        Students.prototype = new Person();// Students的原型，指向的是Person的对象
+        var stu = new Students();
+        // stu.study();// 报错
+        stu.eat();// 能访问到，因为只想已经改变忙所以能访问到Person对象的方法
+
+        // 综上：原型的指向可以改变
+    </script>
+</body>
+</html>

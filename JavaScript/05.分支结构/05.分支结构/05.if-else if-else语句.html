@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            if语句：一个分支
+            if-else语句：两个分支
+            if-else if...-else：多个分支
+            最终只会执行一个分支
+
+            语法：
+                if(条件1) {
+                    条件1成立所执行的代码块1;
+                }else if(条件2) {
+                    条件2成立所执行的代码块2;
+                }else if(条件3) {
+                    条件3成立所执行的代码块3;
+                }...
+                else {
+                    以上所有条件都不成立所执行的代码块n;
+                }
+        */
+
+        // 成绩等级：<60E 60-69D 70-79C 60-89B 90-99A 100S
+        var score = Number(prompt('请输入成绩：'));
+        console.log(score);
+        if(!isNaN(score)) {
+            if(score === 100) {
+                alert('评级为S');
+            }else if(score >= 90 && score <=99) {
+                alert('评级为A');
+            }else if(score >= 80 && score <=89) {
+                alert('评级为B');
+            }else if(score >= 70 && score <=79) {
+                alert('评级为C');
+            }else if(score >= 60 && score <=69) {
+                alert('评级为D');
+            }else {
+                alert('评级为E');
+            }
+        }else {
+            alert('输入错误，请输入正整数！');
+        }
+    </script>
+</body>
+</html>

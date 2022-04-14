@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <p class="pObj"></p>
+        <span></span>
+        <input type="text">
+        <a href=""></a>
+    </div>
+
+    <script>
+        /* 
+            文档：document
+            元素：页面中所有标签elements
+            节点：页面中所有内容（标签、属性、文本[文字/换行/空格]
+            根节点：html
+
+            节点的属性：
+            nodeType：节点的类型，1---标签节点、2---属性节点、3---文本节点
+            nodeName：节点的名字，标签节点---标签名大写、属性节点---属性名小写、文本节点---#text
+            nodeValue：节点的值，标签节点---null、属性节点---属性值、文本节点---文本
+        */
+
+        var box = document.getElementById("box");
+        console.log(box.nodeType);
+        console.log(box.nodeName);
+    </script>
+</body>
+</html>

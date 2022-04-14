@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+            this.eat = function() {
+                console.log("在人民广场吃炸鸡");
+            }
+        }
+        
+        var per1 = new Person("小明", 18);
+        var per2 = new Person("小红", 18);
+        per1.eat();
+        per2.eat();
+        // 是不是同一个方法
+        console.log(per1.eat == per2.eat);// false 说明调用的不是同一个方法
+        // 导致空间浪费，数据不能共享
+        // 解决：通过原型来解决  好处-->数据共享，节省空间
+    </script>
+</body>
+</html>

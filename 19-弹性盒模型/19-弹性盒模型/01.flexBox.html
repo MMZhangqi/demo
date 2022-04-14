@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            margin: 100px auto 0;
+            /* 弹性盒模型 */
+            display: flex;
+            /* 主轴方向 */
+            /* flex-direction: column-reverse; */
+            /* 换行 */
+            /* flex-wrap: wrap; */
+            /* 主轴方向排布 */
+            /* justify-content: space-around; */
+            /* 交叉轴方向排布 */
+            /* align-items: center; */
+            /* align-content: space-around; */
+        }
+
+        #box>div {
+            height: 50px;
+        }
+
+        #box>div:nth-of-type(3n) {
+            width: 200px;
+            /* height: 100px; */
+            background-color: lightblue;
+            /* 弹性增长因子 */
+            /* flex-grow: 2; */
+            /* 弹性缩小因子 */
+            flex-shrink: 1;
+            flex: 2 1 auto;
+        }
+
+        #box>div:nth-of-type(3n+1) {
+            width: 100px;
+            /* height: 300px; */
+            background-color: lightgreen;
+            /* flex-grow: 1; */
+        }
+
+        #box>div:nth-of-type(3n+2) {
+            width: 400px;
+            /* height: 200px; */
+            background-color: violet;
+            flex-shrink: 2;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div>box01</div>
+        <div>box02</div>
+        <div>box03</div>
+        <!-- <div>box01</div>
+        <div>box02</div>
+        <div>box03</div>
+        <div>box01</div>
+        <div>box02</div>
+        <div>box03</div>
+        <div>box01</div>
+        <div>box02</div>
+        <div>box03</div>
+        <div>box01</div>
+        <div>box02</div>
+        <div>box03</div>
+        <div>box01</div>
+        <div>box02</div>
+        <div>box03</div> -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // JavaScript是一种动态类型的语言，变量是没有类型限制的，可以随时赋予任意值。
+        // 关于方法：带有小括号   关于属性：没有括号
+
+        /* 
+            一、强制转换
+                - Number()：使用Number函数，可以将任意类型的值转化成数值
+                - String()：使用String函数，可以将任意类型的值转化成字符串
+                - 变量名.toString()
+                - Boolean()：Boolean函数，以将任意类型的值转化成布尔值
+                    除了以下五个值的转换结果为false，其它的值全部为true
+                    - undefined
+                    - null
+                    - 0（包含-0和+0）
+                    - NaN
+                    - ''（空字符串）
+
+            二、自动转换
+                是以强制转换为基础的，遇到以下三种情况的时候，JavaScript会自动转换数据类型，即转换是自动完成的，用户看不见
+                - 不同类型的数据互相运算
+                - 对非布尔值类型的数据求布尔值
+                - 对非数值类型的值使用一元运算符（+和-）
+                ① 自动转换为布尔值
+                    - JavaScript遇到预期为布尔值的地方（比如if语句的条件部分），就会将非布尔值的参数自动转换为布尔值，系统自动调用Boolean()函数
+                ② 自动转换为字符串
+                    - JavaScript遇到预期为字符串的地方，就会将非字符串的参数自动转换为字符串，具体规则是：现将复合类型的值转为原始类型的值，再将原始类型的值转为字符串
+                    - 字符串的自动转换，主要发生在字符串的加法运算时，当一个值为字符串，另一个值为非字符串，后者转化成字符串
+                ③ 自动转换为数值
+                    - JavaScript遇到预期为数值的地方，就会将非字符串的参数自动转换为数值，系统自动调用Number()函数
+                    - 除了加法运算符（+）有可能把云算子转为字符串，其他运算符都会把云算子转换为数值
+                    - 一元运算符也会把运算子转换为数值
+
+            三、其它类型转化为数字类型：
+                - parseInt() 转化成整数，向下取整
+                - parseFloat() 转化成小数/浮点数
+        */
+
+        // 强制转换：Number()
+        // 数值：转换后还是原来的值
+        console.log(Number(123));// 123
+        // 字符串：如果可以被解析为数值，则转换为相应的数值
+        console.log(Number('3.14'));// 3.14
+        // 字符串：如果不可以被解析为数值，返回NaN
+        console.log(Number('3.14shfusfld;ksl'));// NaN
+        console.log(Number('shfusfld;ksl'));// NaN
+        console.log(Number('shfusfld;ksl3.14'));// NaN
+        // 空字符串：0
+        console.log(Number(''));// 0
+        // 布尔值：true-->1    false-->0
+        console.log(Number(true));// 1
+        console.log(Number(false));// 0
+        // undefined：NaN
+        console.log(Number(undefined));// NaN
+        // null：0
+        console.log(Number(null));// 0
+
+        // 强制转换：String()
+        console.log(String(123));// "123"
+        console.log(String('abc'));// "abc"
+        console.log(String(true));// "true"
+        console.log(String(false));// "false"
+        console.log(String(undefined));// "undefined"
+        console.log(String(null));// "null"
+        var num = 10;
+        console.log(num.toString());
+
+        // 其它转换：parseInt()
+        console.log(parseInt('3.14'));// 3
+        console.log(parseInt('9.99'));// 9
+        console.log(parseInt('3.14shfusfld;ksl'));// 3
+        console.log(parseInt('shfusfld;ksl'));// NaN
+        console.log(parseInt('shfusfld;ksl3.14'));// NaN
+        // 其它转换：parseFloat()
+        console.log(parseFloat('3.14'));// 3.14
+        console.log(parseFloat('999'));// 999
+        console.log(parseFloat('3.14shfusfld;ksl'));// 3.14
+        console.log(parseFloat('shfusfld;ksl'));// NaN
+        console.log(parseFloat('shfusfld;ksl3.14'));// NaN
+
+
+
+        // 自动转化
+        // 不同类型数据互相运算
+        console.log(123 + 'abc');// '123abc'
+        // 对非布尔值类型的数据求布尔值
+        if('abc') {
+            console.log('hello');
+        }
+        // 对非数值类型的值使用一元运算符（+和-）
+        console.log(+ {foo: 'bar'});// NaN
+        console.log(- [1, 2, 3]);// NaN
+
+        // 自动转换为字符串
+        console.log('5' + 1);// '51'
+        console.log('5' + true);// '5true'
+        console.log('5' + false);// '5false'
+        console.log('5' + {});// '5[object Object]'
+        console.log('5' + []);// '5'
+        console.log('5' + function() {});// '5function() {}'
+        console.log('5' + undefined);// '5undefined'
+        console.log('5' + null);// '5null'
+
+        // 自动转换为数值
+        console.log('5' - '1');// 4
+        console.log('5' * '5');// 25
+        console.log(true - 1);// 0
+        console.log(false - 1);// -1
+        console.log('5' - 1);// 4
+        console.log('5' * []);// 0
+        console.log(false / '5');// 0
+        console.log('abc' - 1);// NaN
+        console.log(null + 1);// 1
+        console.log(undefined + 1);// NaN
+        // 一元运算符也会把运算子转换为数值
+        console.log(+'abc');// NaN
+        console.log(-'abc');// NaN
+        console.log(+true);// 1
+        console.log(-false);// -0
+    </script>
+</body>
+</html>

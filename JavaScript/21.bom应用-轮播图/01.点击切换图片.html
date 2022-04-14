@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body,
+        ul, 
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #box {
+            width: 606px;
+            height: 306px;
+            position: relative;
+            border: 10px solid #ccc;
+            margin: 100px auto 0;
+            overflow: hidden;
+        }
+
+        #box>ul {
+            width: 2930px;
+            position: absolute;
+        }
+
+        #box>ul>li {
+            float: left;
+        }
+
+        #box>#focus {
+            display: none;
+        }
+
+        
+
+        #box>#focus>span {
+            display: block;
+            width: 30px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, .3);
+            text-align: center;
+            line-height: 50px;
+            position: absolute;
+            top: 50%;
+            margin-top: -25px;
+            cursor: pointer;
+            font-size: 24px;
+            color: #fff;
+            transition: background-color .3s;
+        }
+
+        #box>#focus>span:hover {
+            background-color: rgba(0, 0, 0, .5);
+        }
+
+        #box>#focus>span#left {
+            left: 0;
+        }
+
+        #box>#focus>span#right {
+            right: 0;
+        }
+
+        #point {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        #point>span {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #fff;
+            text-align: center;
+            line-height: 16px;
+            cursor: pointer;
+        }
+
+        #point>span.current {
+            background-color: pink;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul id="images">
+            <li>
+                <img src="images/1.png" alt="">
+            </li>
+            <li>
+                <img src="images/2.png" alt="">
+            </li>
+            <li>
+                <img src="images/3.png" alt="">
+            </li>
+            <li>
+                <img src="images/4.png" alt="">
+            </li>
+            <li> 
+                <img src="images/1.png" alt="">
+            </li>
+        </ul>
+        <div id="focus">
+            <span id="left">&lt;</span>
+            <span id="right">&gt;</span>
+        </div>
+        <div id="point">
+            <span class="current">1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+        </div>
+    </div>
+
+    <script src="common.js"></script>
+    <script>
+        // 最外面的div
+        var box = my$("box");
+        // 小按钮
+        box.onmouseover = function() {
+            my$("focus").style.display = "block";
+        }
+        box.onmouseout = function() {
+            my$("focus").style.display = "none"; 
+        }
+        var lis = ele$("li");
+        var index = 0;
+        my$("right").onclick = function() {
+            if(index == lis.length - 1) {
+                index = 0;
+                my$("images").style.left = "0px";
+            }
+            index++;
+            // my$("images").style.left = -index * 586 + "px";
+            animate(my$("images"), -index * 586);
+        }
+
+        // 封装匀速动画函数
+        function animate(element, target) {
+            element.timeId = setInterval(function() {
+                // 1.获取盒子的当前位置
+                var current = element.offsetLeft;// 左偏移的距离
+                // 2.div每次移动的像素
+                var step = 7;
+                // 3.判断往哪边移动
+                step = current <= target ? step : -step;
+                // 4.每次移动后的距离
+                current += step;
+                // 5.剩余的步数是否大于step
+                if(Math.abs(target - current) > Math.abs(step)) {
+                    element.style.left = current + "px";
+                }else {
+                    clearInterval(element.timeId);
+                    element.style.left = target + "px";
+                }
+            }, 10)
+        }
+
+        var spans = my$("point").getElementsByTagName("span");
+        for(var i = 0; i < spans.length; i++) {
+            spans[i].setAttribute("index", i);
+            spans[i].onmouseover = function() {
+                for(var j = 0; j < spans.length; j++) {
+                    spans[j].className = "";
+                }
+                this.className = "current";
+                var index = this.getAttribute("index");
+                animate(my$("images"), -index * 586);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <p>pppp</p>
+        <span>sssssssss</span>
+        <input type="text">
+        <a href="">aaaaaa</a>
+        <ul id="uuObj">
+            <li>111</li>
+            <li>222</li>
+            <li id="third">333</li>
+            <li>444</li>
+        </ul>
+        <p>balabalabala</p>
+    </div>
+
+    <div id="box02">
+        <ul id="uuu">
+            <li>这是第1个li</li>
+            <li>这是第2个li</li>
+            <li>这是第3个li</li>
+            <li>这是第4个li</li>
+        </ul>
+    </div>
+
+    <script>
+        // 把box中所有的p标签设置背景颜色
+        var box = document.getElementById("box");
+        var nodes = box.childNodes;
+        console.log(nodes);
+        for(var i = 0; i < nodes.length; i++) {
+            if(nodes[i].nodeType == 1 && nodes[i].nodeName == "P") {
+                nodes[i].style.backgroundColor = "pink";
+            }
+        }
+    </script>
+</body>
+</html>

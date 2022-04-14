@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            只有函数可以制造作用域结构，只要是代码，就至少有一个作用域
+            凡是代码中有函数，这个函数就构成另一个作用域，如果函数中还有函数，在这个作用域中又诞生一个作用域
+            将这样的所有作用域列出来，可以有一个结构：函数内指向函数外的一个链式结构，就是作用域链
+        */
+
+        // 从内到外找
+        var num = 10;
+        function f1() {
+            var num = 0;
+            function f2() {
+                var num = 500;
+                function f3() {
+                    var num = 200;
+                    console.log(num);
+                    function f4() {
+                        var num = 100;
+                        console.log(num);
+                    }
+                    f4();
+                }
+                f3();
+            }
+            f2();
+        }
+        f1();
+    </script>
+</body>
+</html>

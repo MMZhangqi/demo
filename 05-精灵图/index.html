@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 20px auto;
+        }
+        .oneimg{
+            width: 123px;
+            height: 63px;
+            border: black solid 3px;
+            background: url(images/精灵图.png) no-repeat -67px -67px,
+                        rgba(10, 200, 200, 0.7);
+               /*加上背景颜色就可以写成  */
+        }
+        .twoimg{
+            width: 500px;
+            height: 500px;
+            padding: 30px;
+            border: black dashed 30px;
+             /* background-size背景图片宽高：百分比 数字 关键词：contain图片等比缩放，当碰一条边边框就会停止缩放
+            cover */
+            /* background-size: contain; */
+            /* 背景图片是否重复 */
+            /* background-repeat: no-repeat; */
+            /* 背景图片路径 */
+            /* background-image: url(images/1920_fr_event.jpg); */
+            /* 背景图片裁剪 只显示图片的范围 content-box border-box padding-box */
+            /* background-clip: content-box; */
+            /* 图片定位 从什么地方开始显示*/
+            /* background-position: 0px 0px; */
+            /* 内容超出部分隐藏 */
+            /* overflow: hidden; */
+            background: url(images/1920_fr_event.jpg) no-repeat scroll 120px 120px/200px auto,
+            url(images/1920_fr_event.jpg) no-repeat scroll 200px 300px/200px auto,
+            rgba(100, 100, 100, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <div class="oneimg"></div>
+    <div class="twoimg"></div>
+</body>
+</html>

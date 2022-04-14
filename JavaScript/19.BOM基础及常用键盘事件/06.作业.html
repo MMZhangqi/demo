@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        #box{
+            position: relative;
+            width: 800px;
+            height: 400px;
+            margin: 30px auto 0;
+            background-color: black;
+        }
+        img{
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            animation: scaleStar 2s ease 0s;
+        }
+        @keyframes scaleStar {
+            0%{
+                transform: scale(0);
+            }
+            50%{
+                transform: scale(1);
+            }
+            100%{
+                transform: scale(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script src="common.js"></script>
+    <script>
+        var TimeId = setInterval(function () {
+            var childs = my$("box").childNodes;
+            for(var i = childs .length - 1; i >= 0; i--) {
+                my$("box").removeChild(childs[i]);
+            }
+            var count = Math.ceil(Math.random()*10+1);
+            for(var i = 0; i < count; i++){
+                var starObj = document.createElement("img");
+                starObj.src = "images/starL.png";
+                starObj.id = "star"
+                starObj.style.top = Math.ceil(Math.random()*400)+"px";
+                starObj.style.left = Math.ceil(Math.random()*800)+"px";
+                my$("box").appendChild(starObj);
+            }
+        },2000);
+    </script>
+</body>
+</html>

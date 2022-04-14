@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1.点击切换图片 -->
+    <input id="btn" type="button" value="点击切换图片">
+    <img id="image" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2Ftp05%2F19100122420C335-0-lp.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1641125024&t=7fae322fa75edac78454177a2af2ceb1" alt="">
+    <script>
+        var btn = document.getElementById("btn");
+        btn.onclick = function() {
+            var imgObj = document.getElementById("image");
+            imgObj.src = "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fup.enterdesk.com%2Fedpic_source%2F53%2F0a%2Fda%2F530adad966630fce548cd408237ff200.jpg&refer=http%3A%2F%2Fup.enterdesk.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1641125247&t=1af5af5f29dec49569e0a675f96648b9";
+        }
+    </script>
+
+    <!-- 2.点击修改标签内容 -->
+    <input id="btn2" type="button" value="点击修改标签内容">
+    <p id="text">ppppppppppppp</p>
+    <script>
+        document.getElementById("btn2").onclick = function() {
+            document.getElementById("text").innerText = "qqqqqqqqqqqqqq";
+        }
+    </script>
+</body>
+</html>

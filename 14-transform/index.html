@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: red;
+        }
+        .box{
+            width: 500px;
+            height: 500px;
+            margin: 100px auto 0;
+            text-align: center; 
+        }
+        img{
+            position: relative;
+        }
+        img[src="images/ss/shield_1_01.png"]{
+            left: -100px;
+            top: 0;
+            transform: rotate(40deg);
+            transition: all 2s;
+        }
+        img[src="images/ss/shield_1_02.png" ]{
+            left: 300px;
+            top: -50px;
+            transform: rotate(80deg) skew(30deg);
+            transition: all 2s;
+        }
+        img[src="images/ss/shield_1_03.png"]{
+            left: 300px;
+            top: 200px;
+            transform: rotate(80deg) skew(30deg) scale(1.2);
+            transition: all 2s;  
+        }
+        img[src="images/ss/shield_1_04.png"]{
+            left: 300px;
+            top: 200px;
+            transform: rotate(-80deg) skew(30deg) scale(1.2);
+            transition: all 2s;   
+        }
+        img[src="images/ss/shield_1_05.png"]{
+            left: -300px;
+            top: 88px;
+            transform: rotate(222deg) skew(50deg) scale(1.8);
+            transition: all 2s;   
+        }
+        img[src="images/ss/shield_1_06.png"]{
+            left: 88px;
+            top: -88px;
+            transform: rotate(-80deg) skew(10deg) scale(1.2);
+            transition: all 2s;   
+        }
+        img[src="images/ss/shield_1_07.png"]{
+            left: 333px;
+            top: 200px;
+            transform: rotate(80deg) skew(40deg) scale(1.3);
+            transition: all 2s;   
+        }
+        img[src="images/ss/shield_1_08.png"]{
+            left: -123px;
+            top: -30px;
+            transform: rotate(-222deg) skew(33deg) scale(1.5);
+            transition: all 2s;   
+        }
+        img[src="images/ss/shield_1_09.png"]{
+            left: -250px;
+            top: -200px;
+            transform: rotate(-222deg) skew(33deg) scale(1.5);
+            transition: all 2s;   
+        }
+        .box:hover img{
+            transform:rotate(0);
+            transform: skew(0);
+            transform: scale(1);
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="images/ss/shield_1_01.png" alt="">
+        <img src="images/ss/shield_1_02.png" alt="">
+        <img src="images/ss/shield_1_03.png" alt="">
+        <img src="images/ss/shield_1_04.png" alt="">
+        <img src="images/ss/shield_1_05.png" alt="">
+        <img src="images/ss/shield_1_06.png" alt="">
+        <img src="images/ss/shield_1_07.png" alt="">
+        <img src="images/ss/shield_1_08.png" alt="">
+        <img src="images/ss/shield_1_09.png" alt="">
+    </div>
+</body>
+</html>

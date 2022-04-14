@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            布尔运算符（逻辑运算符）用于将表达式转为布尔值，一共有4个运算符
+                - 取反运算符：!
+                    * 非布尔值会先转换成布尔值，再取反
+                - 且运算符：&&
+                    * 如果第一个运算子的值是true会返回第二个运算子的值
+                    * 如果第一个运算子的值是false直接返回第一个运算子的值
+                - 或运算符：||
+                    * 如果第一个运算子的值是true直接返回第一个运算子的值
+                    * 如果第一个运算子的值是false则返回第二个运算子的值
+                - 三元运算符：?:
+                    * 是JavaScript语言唯一一个需要三个运算子的运算符
+                    * 如果第一个表达式的布尔值为true，返回第二个表达式的值，否则返回第三个表达式的值
+        */
+        
+        // 取反运算符
+        console.log(!true);// false
+        console.log(!false);// true
+
+        // 且运算符（&&）：往往用于表达多个表达式 --- 一假即假
+        console.log('t' && '');// ''
+        console.log('t' && 'f');// 'f'
+        console.log('' && 'f');// ''
+
+        // 或运算符（||）：用于表达多个表达式 --- 一真即真
+        console.log('t' || '');// 't'
+        console.log('t' || 'f');// 't'
+        console.log('' || 'f');// 'f'
+
+        // 三元运算符：?:
+        // 川哥今年88成年了吗?成年:未成年
+
+        var a = 5, b = 2;
+        console.log(a > b ? a : b);
+    </script>
+</body>
+</html>

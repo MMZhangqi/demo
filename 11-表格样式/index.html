@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        table{
+            width: 800px;
+            margin:  0 auto 20px;
+            text-align: center; 
+            border-collapse: collapse;
+            border-spacing: 5px;
+        }
+        td,th{
+            height: 40px;
+            border: #000 solid 1px;
+            width: 200px;
+        }
+        .tb1{
+            background-color: rgb(72, 146, 202);
+        }
+        .tb2{
+            background-color: green;
+        }
+        .tb3{
+            background-color: lightblue;
+        }
+        .tr1{
+            background-color: pink;
+        }
+        .title{
+            background-color: rgb(252, 137, 156);
+        }
+    </style>
+</head>
+<body>
+    <table class="tb1">
+        
+        <tbody>
+            <tr>
+                <td rowspan="3">产品名称</td>
+                <td>笔记本</td>
+            </tr>
+            <tr>
+                <td>手机</td>
+            </tr>
+            <tr>
+                <td>鼠标</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">欢迎采购</td>
+            </tr>
+        </tfoot>
+       
+    </table>
+    
+    <table class="tb2">
+        <tr>
+            <th colspan="2">京东商城</td>
+            <th colspan="2">欢迎光临购物网站</td>
+        </tr>
+        <tr>
+            <td rowspan="2">各种卡的汇总</td>
+            <td>铅笔</td>
+            <td colspan="2">钢笔</td>
+        </tr>
+        <tr>
+            <td>打印</td>
+            <td colspan="2">刻录</td>
+        </tr>
+    </table>
+
+    <table class="tb3">
+        <tr>
+            <th colspan="4">1204班网页设计</td>
+        </tr>
+        <tr style="background-color: rgb(105, 105, 230);">
+            <td colspan="2">第一季度成绩表</td>
+            <td colspan="2">第二季度成绩表</td>
+        </tr>
+        <tr>
+            <td>平面设计80</td>
+            <td>三维设计70</td>
+            <td>网页设计80</td>
+            <td>动画设计70</td>
+        </tr>
+    </table>
+
+    <table>
+        <tr class="title">
+            <td colspan="4">品牌商城</td>
+        </tr>
+        <tr>
+            <td colspan="2">笔记本电脑</td>
+            <td colspan="2">办公用品</td>
+        </tr>
+        <tr class="tr1">
+            <td>惠普</td>
+            <td>华硕</td>
+            <td>打印机</td>
+            <td>打印机</td>
+        </tr>
+        <tr class="tr0">
+            <td>惠普</td>
+            <td>华硕</td>
+            <td>打印机</td>
+            <td>打印机</td>
+        </tr>
+        <tr class="tr1">
+            <td>惠普</td>
+            <td>华硕</td>
+            <td>打印机</td>
+            <td>打印机</td>
+        </tr>
+        <tr class="tr0">
+            <td>惠普</td>
+            <td>华硕</td>
+            <td>打印机</td>
+            <td>打印机</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://www.baidu.com">百度一下</a>
+    <button id="btn">点击一下</button>
+    <div id="box">
+
+    </div>
+    <script src="common.js"></script>
+    <script>
+        /* 
+            作业：点击按钮动态创建表格
+        */
+        var arr = [
+            {
+                names: "百度",
+                href: "https://www.baidu.com",
+                content: "百度一下，你就知道"
+            },
+            {
+                names: "淘宝",
+                href: "https://www.taobao.com",
+                content: "淘宝网 - 淘！我喜欢"
+            },
+            {
+                names: "京东",
+                href: "https://www.jd.com",
+                content: "京东(JD.COM)-正品低价、品质保障、配送及时、轻松购物！"
+            },
+            {
+                names: "新浪",
+                href: "https://www.sina.com.cn",
+                content: "新浪首页"
+            }
+        ]
+        console.log(arr);
+        // 点击btn
+        my$("btn").onclick = function(){
+            // 创建table表格
+            var t_obj = document.createElement("table");
+            my$("box").appendChild(t_obj)
+            for(var i = 0; i < arr.length; i++){
+                var tr_obj = document.createElement("tr");
+                for(var element in arr[i]){
+                    console.log(arr[i].length);
+                    var td_obj = document.createElement("td");
+                    td_obj.innerText = arr[i][element];
+                    tr_obj.appendChild(td_obj);
+                    td_obj.style.height = "30px"
+                    td_obj.style.padding =" 0px 20px"
+                    td_obj.style.textAlign = "center"
+                    td_obj.style.borderCollapse = "collapse";
+                    td_obj.style.borderColor = "pink";
+                    td_obj.style.borderStyle = "solid";
+                    td_obj.style.borderWidth = "1px"
+                }
+                t_obj.appendChild(tr_obj); 
+                t_obj.style.borderCollapse = "collapse"; 
+                t_obj.style.borderColor = "pink";
+                t_obj.style.borderStyle = "solid";
+                t_obj.style.borderWidth = "1px"        
+            }  
+        }
+    </script>
+</body>
+</html>

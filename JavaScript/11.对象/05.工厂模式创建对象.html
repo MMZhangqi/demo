@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 一次性创建多个对象
+        // 第一个女朋友
+        var gf01 = new Object();
+        gf01.name = "小丽";
+        gf01.age = "18";
+        gf01.caiyi = function() {
+            console.log("唱歌");
+        }
+
+        // 第二个女朋友
+        var gf02 = new Object();
+        gf02.name = "小红";
+        gf02.age = "22";
+        gf02.caiyi = function() {
+            console.log("跳舞");
+        }
+
+        // 通过工厂模式创建对象，姓名、年龄、才艺、爱好 ---> 封装函数
+        function girlFriend(name, age) {
+            var obj = new Object();
+            obj.name = name;
+            obj.age = age;
+            // 添加方法
+            obj.favorite = function() {
+                console.log("我叫" + this.name + "，我喜欢唱歌");
+            }
+            return obj;
+        }
+
+        var girlFriend01 = girlFriend("小芳", 20);
+        var girlFriend01 = girlFriend("小薇", 25);
+        console.log(girlFriend01.age);
+        girlFriend01.favorite();
+
+        // 判断对象是否属于该类型instanceof语法：对象名/变量名 instanceof 数据类型的名字 ---> 返回值是布尔类型
+        console.log(girlFriend01 instanceof Object);
+        console.log(girlFriend01 instanceof Number);
+    </script>
+</body>
+</html>

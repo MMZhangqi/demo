@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 300px;
+            margin: 100px auto 0;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #666;
+            width: 300px;
+        }
+        th,
+        td {
+            border: 1px solid #666;
+            color: #404060;
+            padding: 10px;
+        }
+        th {
+            background-color: #abcdef;
+            font: bold 16px "宋体";
+            color: #fff;
+        }
+        td {
+            font: 14px "宋体";
+        }
+        tbody tr {
+            background-color: #eee;
+            cursor: pointer;
+        }
+        tbody tr:hover {
+            background-color: #ccc;
+        }
+        tbody tr {
+            background-color: #eee;
+            cursor: pointer;
+        }
+        tbody td:first-child {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="j_ckAll">
+                    </th>
+                    <th>菜名</th>
+                    <th>价格</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="checkbox">
+                    </td>
+                    <td>水煮鱼</td>
+                    <td>￥66.66</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="checkbox">
+                    </td>
+                    <td>剁椒鱼头</td>
+                    <td>￥77.77</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" class="checkbox">
+                    </td>
+                    <td>锡纸烤鱼</td>
+                    <td>￥88.88</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // 1.获取全选框元素
+        var ckAll = document.getElementById("j_ckAll");
+
+        // 2.获取所有的复选框
+        var checkes = document.getElementsByClassName("checkbox");
+
+        // 3.点击全选按钮，所有框都选中
+        ckAll.onclick = function() {
+            // console.log(ckAll.checked);
+            for(var i = 0; i < checkes.length; i++) {
+                // 把当前全选框的状态赋值所有复选框
+                checkes[i].checked = this.checked;
+            }
+        }
+
+        // 4.复选框全部选中，全选框联动选中，有一个复选框没选中，全选框取消选中
+        for(var i = 0; i < checkes.length; i++) {
+            checkes[i].onclick = function() {
+                // 假设默认被选中
+                var flag = true;
+                for(var j = 0; j < checkes.length; j++) {
+                    // 判断有没有全部选中，没有就立刻让flag为false
+                    if(!checkes[j].checked) {
+                        flag = false;
+                        break;
+                    }
+                }
+                // 给全选框赋值
+                ckAll.checked = flag;
+            }
+        }
+    </script>
+</body>
+</html>

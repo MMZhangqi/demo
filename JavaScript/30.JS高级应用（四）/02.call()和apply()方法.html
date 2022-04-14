@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // call和apply方法的作用：都可以改变this指向
+        function f1(x, y) {
+            console.log(x + y, this.age);
+        }
+        f1(10, 20);
+        console.dir(f1);
+        console.dir(Math);// 不是函数，只是对象
+        // f1.call();
+        // f1.apply(null);// 不传参数，或者只传一个null，那么this还是默认的window
+
+        // 传参--->传参方法不一样
+        // f1.call(null, 10, 30);
+        // f1.apply(null, [100, 200]);
+
+        // var obj = {
+        //     age: 18,
+        //     sex: "男"
+        
+        // }
+        // f1.call(obj, 10, 20);
+        // f1.apply(obj, [100, 200]);// 此时，f1函数的指向变成了obj的
+
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        Person.prototype.eat = function() {
+            console.log("吃炸鸡", this);
+        }
+        var per = new Person("大白", 33);
+
+        function Student(name, age) {
+            Person.call(this, name, age)
+        }
+
+        Student.prototype = new Person();
+
+        var stu = new Student("小白", 16);
+
+        console.log(stu.name, stu.age);
+        console.log(per.name, per.age);
+
+        // 改变Person的方法中的this指向
+        per.eat.call(stu);
+    </script>
+</body>
+</html>

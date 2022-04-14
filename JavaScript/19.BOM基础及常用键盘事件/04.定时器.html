@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">点击停止</button>
+
+    <script src="common.js"></script>
+    <script>
+        // 定时器：setInterval(函数, 时间：毫秒)没过多长时间执行一次函数的代码，返回值是定时器的id
+        var timeId = setInterval(function() {
+            // console.log(this);
+            console.log(888);
+        }, 1000)
+
+        // 点击按钮停止定时器
+        my$("btn1").onclick = function() {
+            // console.log(timeId);
+            clearInterval(timeId);
+        }
+    </script>
+</body>
+</html>

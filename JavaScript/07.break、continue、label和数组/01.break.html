@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            break关键字：在循环中使用，遇到break立即跳出当前循环
+            for循环也可以用break跳出循环
+        */
+        /* while(true) {
+            console.log("我在循环");
+            break;
+        } */
+
+        /* for(var i = 0; i < 10; i++) {
+            while(true) {
+                console.log("我在循环");
+                break;
+            }
+            console.log("for循环的");
+            break;
+        } */
+
+        /* // 100-200之间找到第一个可以被7整除
+        for(var i = 100; i <=200; i++) {
+            if(i % 7 == 0) {
+                console.log(i);
+                break;
+            }
+        } */
+
+        // 计算1-100的累加和，遇3停止
+        var i = 1;
+        var sum = 0;
+        while(i <= 100) {
+            if(i % 10 == 3) {
+                i++;
+                break;
+            }
+            sum += i;
+            i++;
+        }
+        console.log(sum);
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #menu {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 90px;
+            border-radius: 3px;
+            list-style: none;
+            border: 1px solid #cccccc;
+            padding: 2px;
+            background: #ffffff;
+        }
+
+        #menu li {
+            position: relative;
+            height: 24px;
+            padding-left: 24px;
+        }
+
+        #menu li a {
+            display: block;
+            padding-left: 5px;
+            text-decoration: none;
+        }
+
+        .active {
+            background: #cccccc;
+        }
+
+        #menu li .active a {
+            color: #ffffff;
+        }
+
+        #menu li em {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 24px;
+            height: 24px;
+        }
+
+        .cut {
+            background: url("images/ico.png") 0px 0px;
+        }
+
+        .copy {
+            background: url("images/ico.png")  0px -24px;
+        }
+
+        .paste {
+            background: url("images/ico.png") 0px -48px;
+        }
+    </style>
+</head>
+<body>
+<ul id="menu">
+    <li><em class="cut"></em><a href="">剪切</a></li>
+    <li><em class="copy"></em><a href="">复制</a></li>
+    <li><em class="paste"></em><a href="">粘贴</a></li>
+</ul>
+
+<script>
+    var menu = document.getElementById("menu");
+    var li = document.getElementsByTagName("li");
+    menu.style.display = "none";
+    for(var i = 0; i < li.length; i++) {
+        li[i].onmouseover = function() {
+            this.className = "active";
+        }
+        li[i].onmouseout = function() {
+            this.className = "";
+        }
+    }
+    document.oncontextmenu = function(event) {
+        var e = event || window.event;
+        menu.style.display = "block";
+        menu.style.left = e.clientX + "px";
+        menu.style.top = e.clientY + "px";
+        return false;
+    }
+    document.onclick = function() {
+        menu.style.display = "none";
+    }
+</script>
+</body>
+</html>

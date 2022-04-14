@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+
+    <script src="common.js"></script>
+    <script>
+        /* // 为同一个元素绑定不同的事件
+        my$("box").onclick = function() {
+            console.log("我被点击了");
+        }
+        my$("box").onmouseover = function() {
+            console.log("我进来了");
+        }
+        my$("box").onmouseout = function() {
+            console.log("我出去了");
+        } */
+
+        my$("box").onclick = f1;
+        my$("box").onmouseover = f1;
+        my$("box").onmouseout = f1;
+        function f1(e) {
+            // console.log(e.type);
+            switch(e.type) {
+                case "click":
+                    console.log("我被点击了");
+                    break;
+                case "mouseover":
+                    this.style.backgroundColor = "lightblue";
+                    console.log("我进来了");
+                    break;
+                case "mouseout":
+                    this.style.backgroundColor = "lightgreen";
+                    console.log("我出去了");
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

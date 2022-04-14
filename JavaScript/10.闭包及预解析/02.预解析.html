@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            JavaScript预解析机制：
+                - 预解析
+                - 再逐行解读代码
+        */
+
+        var name = 'Cherry';
+        var age = 16;
+        function fn(argument) {
+            console.log(name);// undefined
+            var name = 'tlx';
+            var age = 88;
+        }
+        fn();
+
+
+        /* 
+            解析：
+            全局作用域、局部作用域都是通过以下两个步骤进行：
+                1、先读取有var的变量（没有使用var的变量是不会被预解析的），赋值为undefined，如果两个变量重名，并不影响预解析的过程，就写一个变量就行，因为都是讲变量赋值为undefined（再逐行读取，只是不同的赋值而已），如果有函数名和变量名重名，那就直接去掉变量，不进行解析。那如果函数中存在参数，那么参数也一样使用var进行解析，var argument = undefined;
+                2.再读取function后面的函数---fn，如果有多个函数重名，那么取最后一个函数进行声明。
+        */
+
+        /* 
+            上面的示例有两个作用域，一个是window变量对象的全局作用域，一个是fn变量对象的局部作用
+            预解析过程：
+                1.window：
+                var name = undefined;
+                var age = undefined;
+                function fn(argument){}
+
+                2.fn：
+                var name = undefined;
+                var age = undefined;
+                var argument = undefined;
+
+                预解析完成之后再逐行解读代码
+                通过逐行解读代码进行赋值，改变变量的属性值。
+                遇到函数，直接跳过，因为与解析已经声明过。
+        */
+
+        /* 预解析：提前解析代码 */
+
+        /* 
+            解析代码前，预解析做了哪些事情？
+            1.把变量的声明提前了---提前到当前所在的作用域上面，只会提升声明，不会提升赋值
+            2.把函数的声明提前了---提前到当前所在的作用域上面，只会提升声明，不会提升调用
+            3.先提升var，再提升function
+        */
+
+        console.log(num);// undefined
+        var num = 10;
+        console.log(num);// 10
+
+        // f1();
+        var f1 = function() {
+            console.log('111');
+        }
+        f1();
+    </script>
+</body>
+</html>

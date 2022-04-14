@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="common.js"></script>
+    <script>
+        window.onload = function() {
+            /* 
+                一次性定时器（延时器）：setTimeout(函数, 毫秒数), 过多少毫秒之后触发当前函数
+            */
+
+            my$("body").style.background = "url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fup.enterdesk.com%2Fedpic%2F81%2Fda%2Ffb%2F81dafbebb62f91a53146efe81af11c53.jpg&refer=http%3A%2F%2Fup.enterdesk.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1641732367&t=fd43e60785e54786077f6cc233da8fe6) no-repeat top";
+
+            var timeId = setTimeout(function() {
+                my$("body").style.background = "";
+                my$("body").innerHTML = "欢迎来到登录页面";
+            }, 2000);
+
+            my$("btn").onclick = function() {
+                clearTimeout(timeId);
+            }
+        }
+    </script>
+</head>
+<body id="body">
+    <button id="btn">点击</button>
+</body>
+</html>

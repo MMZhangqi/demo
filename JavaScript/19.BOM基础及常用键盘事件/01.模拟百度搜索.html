@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .search {
+            width: 654px;
+            height: 44px;
+            text-align: center;
+            position: relative;
+            margin: 300px auto 0;
+            font-size: 17px;
+        }
+
+        .search>input {
+            width: 550px;
+            height: 44px;
+            border: 2px solid #c4c7ce;
+            border-radius: 10px 0 0 10px;
+            outline: none;
+            position: absolute;
+            left: 0;
+            padding: 12px 87px 12px 16px;
+        }
+
+        .search>button {
+            width: 108px;
+            height: 44px;
+            background-color: #4e6ef2;
+            color: #fff;
+            font-size: 17px;
+            border: none;
+            border-radius: 0 10px 10px 0;
+            position: absolute;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="search">
+        <input type="text" id="txt">
+        <button>百度一下</button>
+    </div>
+    <div id="box"></div>
+
+    <script src="common.js"></script>
+    <script>
+        my$("txt").onfocus = function() {
+            this.style.border = "2px solid #4e6ef2";
+        }
+        my$("txt").onblur = function() {
+            this.style.border = "2px solid #c4c7ce";
+        }
+        // 1.准备数据
+        var keyWords = ["吃火锅", "吃串串", "吃火龙果", "喝水", "喝岩浆", "喝阔落", "喝奶茶", "0", "011"];
+        // 2.给文本框注册键盘抬起事件
+        my$("txt").onkeyup = function() {
+            // 每次键盘抬起的时候判断页面中有没有这个div
+            if(my$("dv")) {
+                my$("box").removeChild(my$("dv"));
+            }
+            // console.log(this.value);
+            // 获取到的文本框的值
+            var text = this.value;
+            // 存放能对应的上的数据
+            var arr = [];
+            for(var i = 0; i < keyWords.length; i++) {
+                // 判断值是不是当前数据中最开始出现的
+                if(keyWords[i].indexOf(text) == 0) {
+                    arr.push(keyWords[i]);
+                }
+            }
+            // console.log(arr);
+            // 如果文本框是空的，临时数组也是空的，那就不去创建div
+            if(text.length == 0 || arr.length == 0) {
+                // 判断是否存在
+                if(my$("dv")) {
+                    my$("box").removeChild(my$("dv"));
+                }
+                return false;
+            }
+            var box = document.createElement("div");
+            box.id = "dv";
+            my$("box").appendChild(box);
+            box.style.border = "2px solid #4e6ef2";
+            // 便利添加
+            for(var i = 0; i < arr.length; i++) {
+                var pObj = document.createElement("p");
+                box.appendChild(pObj);
+                // 设置内容
+                pObj.innerHTML = arr[i];
+                // 鼠标移入
+                pObj.onmouseover = function() {
+                    this.style.backgroundColor = "pink";
+                }
+                // 鼠标移出
+                pObj.onmouseout = function() {
+                    this.style.backgroundColor = "";
+                }
+                // 鼠标点击
+                pObj.onclick = function() {
+                    my$("txt").value = this.innerText;
+                    my$("box").removeChild(my$("dv"));
+                }
+            }
+        }
+    </script>
+</body>
+</html>

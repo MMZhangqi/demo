@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 读取cookie
+        // 已存的："姓名=Cherry; tel=13333333333;";
+        // var str = "tel=13333333333; 姓名=Cherry; Hm_lvt_af2ca88e2c7a0d358a5a1130270ea7cf=1639561202; Hm_lvt_48f745cc9872cc90f47b2b33eaa85e45=1639561202; _pk_id.7.dc78=49372babe04ac2c1.1639561202.";
+        // console.log(str.substring(3,9));
+        // var s = "tel";
+        // var start = document.cookie.indexOf(s) + 1 + s.length;
+        // console.log(start);// 4
+        // var end = document.cookie.indexOf(";", start);
+        // console.log(end);// 15
+        // // console.log(document.cookie);
+        // var result = document.cookie.substring(start, end);
+        // console.log(result);
+
+        // 封装读取cookie的值
+        // @params：name
+        function getCookie(name) {
+            // 1.判断用户是否首次进入，是的话，没有cookie，返回空字符串
+            if(document.cookie.indexOf(name) != -1) {
+                // 取值
+                var start = document.cookie.indexOf(name);// name所对应的索引值
+                start = start + 1 + name.length;
+                var end = document.cookie.indexOf(";", start);
+                // 如果找不到，会返回-1
+                if(end == -1) {
+                    // 没有分号，也是cookie的长度
+                    end = document.cookie.length;
+                }
+                return document.cookie.substring(start, end);
+            }else {
+                return "";
+            }
+        }
+        console.log(getCookie("姓名"));
+        console.log(getCookie("Hm_lvt_af2ca88e2c7a0d358a5a1130270ea7cf"));
+    </script>
+</body>
+</html>

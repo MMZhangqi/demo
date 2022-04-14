@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box01 {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            margin: auto;
+        }
+        #box02 {
+            width: 200px;
+            height: 200px;
+            background-color: lightgreen;
+        }
+        #box03 {
+            width: 100px;
+            height: 100px;
+            background-color: lightskyblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="box01">
+        <div id="box02">
+            <div id="box03"></div>
+        </div>
+    </div>
+
+    <script src="common.js"></script>
+    <script>
+        // 事件捕获：由外向内触发
+        my$("box01").addEventListener("click", function() {
+            console.log("box01");
+        }, true)
+        my$("box02").addEventListener("click", function() {
+            console.log("box02");
+        }, true)
+        my$("box03").addEventListener("click", function() {
+            console.log("box03");
+        }, true)
+    </script>
+</body>
+</html>

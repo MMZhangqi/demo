@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* var dt = new Date();
+        console.log(dt);
+        dt.setHours(dt.getHours() - 8);
+        dt.setMinutes(dt.getMinutes() + 1);
+        // document.cookie = "username=Cherry; expires=" + dt;
+        alert(document.cookie); */
+
+        // 封装存入cookie
+        // @params：cookie名字、cookie值、过期时间
+        function setCookie(name, value, time) {
+            var dt = new Date();
+            // 设置过期时间
+            dt.setHours(dt.getHours() - 8);
+            dt.setMinutes(dt.getMinutes() + time);
+            document.cookie = name + "="+ value +"; expires=" + dt;
+        }
+        // setCookie("姓名", "Cherry", "1");
+        // setCookie("tel", "13333333333", "30");
+        alert(document.cookie);
+    </script>
+</body>
+</html>

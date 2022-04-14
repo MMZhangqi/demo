@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        // 通过原型来添加方法
+        Person.prototype.eat = function() {
+            console.log("吃火锅");
+        }
+
+        var per1 = new Person("大白", 30);
+        var per2 = new Person("小白", 20);
+        per1.__proto__.eat();
+        per1.eat();// 不写.__proto__也能访问
+        console.log(per1.eat == per2.eat);// true，证明数据共享
+        console.dir(per1);
+        console.dir(per2);
+
+        console.dir(Person);
+        // 为什么在prototype对象中添加的方法，实例对象能调用
+        console.log(per1.__proto__);
+        console.log(Person.prototype);
+        console.log(per1.__proto__ == Person.prototype);// true
+
+        /* 
+            实例对象中有一个属性叫__proto__，叫原型，也是对象，这个属性是浏览器使用的，不是一个标准的属性
+            构造函数中有一个属性叫prototype，叫原型，也是对象，这个属性是程序员使用的，才是标准的属性
+
+            实例对象的__proto__和构造函数中的prototype相等
+            又因为实例对象是由构造函数创建的
+            所以实例对象的__proto__指向了构造函数中的原型对象（prototype）
+        */
+    </script>
+</body>
+</html>

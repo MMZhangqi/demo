@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="btn" type="button" value="点击修改">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <script>
+        document.getElementById("btn").onclick = function() {
+            var inps = document.getElementsByTagName("input");
+            for(var i =  0; i < inps.length; i++) {
+                if(inps[i].type != "button") {
+                    inps[i].value = "啦啦啦啦啦~";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

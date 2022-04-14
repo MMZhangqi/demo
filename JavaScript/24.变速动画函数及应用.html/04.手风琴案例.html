@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        #box {
+            width: 1150px;
+            height: 400px;
+            margin: 50px auto;
+            background-color: pink;
+            overflow: hidden;
+        }
+        #box>ul {
+            width: 1300px;
+        }
+        #box>ul>li {
+            width: 240px;
+            height: 400px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <script src="common.js"></script>
+    <script>
+        // li标签
+        var list = ele$("li");
+        for(var i = 0; i < list.length; i++) {
+            list[i].style.background = "url(images/" + (i + 1) + ".jpg)";
+            list[i].onmouseover = mouseoverHandle;
+            list[i].onmouseout = mouseoutHandle;
+        }
+        // 鼠标移入
+        function mouseoverHandle() {
+            for(var j = 0; j < list.length; j++) {
+                animateStyle(list[j], {
+                    "width": 100
+                })
+            }
+            animateStyle(this, {
+                "width": 800
+            })
+        }
+        // 鼠标移出
+        function mouseoutHandle() {
+            for(var j = 0; j < list.length; j++) {
+                animateStyle(list[j], {
+                    "width": 240
+                })
+            }
+        }
+    </script>
+</body>
+</html>

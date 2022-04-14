@@ -1,0 +1,288 @@
+body{
+    background-color: black;
+    padding: 0;
+    margin: 0; 
+    
+}
+header{
+    width: 100vw;
+    max-width: 1358px;
+    min-width: 1240px;
+    margin: auto;
+    background: #000000;
+}
+/* ------------------头部导航栏----------------- */
+nav{ 
+    width: 100%;
+    max-width: 1358px;
+    min-width: 1230px;
+    height: 78px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+/* ------------------Logo------------------------ */
+nav>a{
+    display: block;
+    width: 167px;
+    height: 78px;
+    padding-top: 9px;
+}
+/* ------------------官网导航-------------------- */
+.navbar{
+    height: 100%;
+    width: 50%;
+    margin-left: 30px;
+}
+.navbar>ul{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+.navbar>ul>li{
+    float: left;
+    width: 20%;
+    height: 100%;
+}
+.navbar>ul>li a{
+    display: block;
+    padding-top: 15px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.navbar>ul>li>a>span{
+    display: block;
+}
+.navbar ul li a span:nth-of-type(1){
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+.navbar ul li a span:nth-of-type(2){
+    color: #aeaeae;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-top: -1px;
+}
+/* -------------官网导航栏 二级菜单-------------- */
+.navabar-menu{
+    position: absolute;
+    width: 100vw;
+    left: -50vw;
+    height: 275px;
+    margin-left: 50%;
+    z-index: -1;
+    opacity: 0;
+    top: 65;
+    transition: opacity,top .3s;
+    background: url(../image/LOL/images/main/dark70-bg-repeat.png) repeat;
+}
+.navabar-menu>.menu-box{
+    width: 100%;
+    min-width: 1230px;
+    max-width: 1358px;
+    height: 100%;
+    margin: 0 auto;
+}
+.menu-box>.menu-content{
+    margin: auto;
+    height: 100%;
+    width: 50%;
+    float: left;
+    margin-left: 195px;
+}
+.menu-content>ul{
+    margin-top: 15px;
+    height: 100%;
+    width: 20%;
+    float: left;
+}
+.menu-content>ul>li{
+    text-align: center; 
+    height: 29px;
+    width: 100%;
+    font-size: 14px;
+}
+.menu-content>ul>li>a{
+    color: #e1e1e1;
+    line-height: 29px;
+}
+.menu-content>ul>li>a:hover{
+    color: #e9c06c;
+}
+/* ------------navbar:hover------------------- */
+.navbar:hover>.navabar-menu{
+    z-index: 1;
+    opacity: 1;
+    top: 78px;
+}
+/* -----------图标icon-h--------------- */
+.icon-n{
+    display: inline-block;
+    background-image: url(../image/topfoot-spr.png);
+    background-size: 405px 178px;
+    background-position: -380px -63px;
+    width: 15px;
+    height: 15px;
+}
+/* -----------图标icon---------------- */
+.icon-h{
+    display: inline-block;
+    background-image: url(../image/topfoot-spr.png);
+    background-size: 405px 178px;
+    background-position: -345px -83px;
+    width: 15px;
+    height: 15px;
+}
+/* -------------用户登录-------------- */
+.head-userinfo-normal{
+    width: 244px;
+    height: 100%;
+}
+.head-userinfo-avatar{
+    text-align: center;
+    padding-top: 6px;
+    width: 48px;
+    height: 48px;
+    margin-top: 13px;
+    background: url(../image/topfoot-spr.png) no-repeat -216px -117px;
+}
+.head-userinfo-avatar>img{
+    border-radius: 50%;
+    height: 36px;
+    width: 36px;
+}
+.head-userinfo-brief{
+    height: 78px;
+    font-size: 16px;
+    margin-left: 5px;
+    line-height: 78px;
+}
+.head-userinfo-brief>p{
+    color: #fff;
+}
+.head-userinfo-brief>p>a{
+    position: relative;
+    left: -5px;
+    color: #fff3d0;
+}
+/* --------------login-hover------------- */
+.head-userinfo-normal>.login-hover {
+    width: 310px;
+    height: auto;
+    background-color: pink;
+    text-align: center;
+    background: url(../image/LOL/images/main/dark70-bg-repeat.png) repeat;
+    position: absolute;
+    overflow: hidden;
+    top: 65px;
+    right: -30px;
+    z-index: -1;
+    opacity: 0;
+    transition: all .3s;
+}
+.login-hover>p{
+    line-height: 24px;
+    color: #848383;
+    font-size: 12px;
+}
+.login-hover>p:nth-of-type(2){
+    position: relative;
+    top: -10px;
+}
+.login-hover>a{
+    margin-top: 15px;
+    display: block;
+    width: 100%;
+    height: 44px;
+    font-size: 14px;
+    line-height: 44px;
+    background-color: #000;
+}
+/* 用户登录-hover */
+.head-userinfo-normal:hover>.login-hover{
+    z-index: 1;
+    opacity: 1;
+    top: 78px; 
+}
+/* --------------掌盟图标----------------*/
+.head-app-normal{
+    width: 40px;
+    height: 100%;
+    text-align: center;
+    margin: 17px 31px 0 0;
+    padding-top: 5px;
+    position: relative;
+}
+.head-app-normal>a{
+    display: inline-block;
+    width: 24px;
+    height: 40px;
+    background: url(../image/topfoot-spr.png) no-repeat -300px -80px;
+}
+/* 掌盟二维码hover */
+.head-app-normal-code{
+    z-index: -1;
+    opacity: 0;
+    transition: all .3s;
+    position: relative;
+    text-align: center;
+    width: 211px;
+    height: 178px;
+    left: -90px;
+    background: url(../image/topfoot-spr.png) no-repeat 0 0;
+}
+.head-app-normal-code>i{
+    display: inline-block;
+    position: relative;
+    top: 20px;
+    border-radius: 10px;
+    width: 120px;
+    height: 120px;
+    background: url(../image/LOL/images/main/zm-qrcode-new.jpg)no-repeat 0 0/120px 120px;
+}
+.head-app-normal-code>p{
+    position: relative;
+    top: 22px;
+    font-size: 12px;
+    color: #cdbe91;
+}
+.polo{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    left: 90px;
+}
+/* --------------掌盟图标hover----------------*/
+.head-app-normal:hover>.head-app-normal-code{
+    z-index: 1;
+    opacity: 1;
+    margin-top: 10px;
+}
+/* ------------搜索图标----------------- */
+.head-search-btn{
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin: 17px 12px 0 0;
+    padding-top: 5px;
+}
+.head-search-btn>a{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url(../image/topfoot-spr.png) no-repeat -380px -35px;
+}
+/* --------------------main------------------ */
+.main{
+    overflow: hidden; 
+    width: 100vw;
+    max-width: 1920px;
+    min-width: 1240px;
+    height: 990px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    background: url(../image/bg.jpg) no-repeat center/cover;
+}

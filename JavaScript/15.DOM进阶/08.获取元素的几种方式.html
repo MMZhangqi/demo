@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #pp
+        .cls
+        div>p */
+    </style>
+</head>
+<body>
+    <p id="pp">id获取的p</p>
+    <p class="cls">class获取的p</p>
+    <span>sssssssss</span>
+    <span class="cls">sssssssss</span>
+    <span>sssssssss</span>
+    <span>sssssssss</span>
+    <span>sssssssss</span>
+    <input type="text" name="usename">
+    <input type="text" name="usename">
+    <input type="text" name="usename">
+    <div>
+        <p>div里的p</p>
+    </div>
+
+    <script>
+        // 1.通过id名获取
+        var idP = document.getElementById("pp");// js对象
+        // 2.通过类名获取
+        var classes = document.getElementsByClassName("cls");// 伪数组
+        // 3.通过标签名获取
+        var marks = document.getElementsByTagName("span");// 伪数组
+        // 4.通过name名获取
+        var names = document.getElementsByName("username");// 伪数组
+
+        // 5.通过选择器获取对象
+        var selector01 = document.querySelector("#pp");
+        var selector02 = document.querySelector(".cls");
+        var selector03 = document.querySelector("span");
+        var selector04 = document.querySelector("div>p");// js对象
+        // document.getElementsByTagName("div").getElementsByTagName("p")
+        console.log(classes);
+        console.log(selector02);
+
+        // 6.通过选择器获取全部符合条件的对象
+        var selectors = document.querySelectorAll(".cls");// 伪数组
+        console.log(selectors);
+    </script>
+</body>
+</html>

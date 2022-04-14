@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="common.js"></script>
+    <script>
+        window.onload = function() {
+            function clock() {
+                var dt = new Date();
+                var year = dt.getFullYear();
+                var month = dt.getMonth() + 1;
+                var day = dt.getDate();
+                var week = dt.getDay();
+                var hours = dt.getHours();
+                var minutes = dt.getMinutes();
+                var seconds = dt.getSeconds();
+
+                // 补位
+                function bu(i) {
+                    return i < 10 ? "0" + i : i;
+                }
+
+                // 用数组设置星期的格式
+                var weekArr = ["日", "一", "二", "三", "四", "五", "六"];
+                my$("box").innerText = year + "年" + bu(month) + '月' + bu(day) + "日 星期" + weekArr[week] + bu(hours) + ":" + bu(minutes) + ":" + bu(seconds);
+            }
+            clock();// 页面加载完成时，初始化一次
+            var timeId = setInterval(clock, 1000);
+
+            my$("btn1").onclick = function() {
+                clearInterval(timeId);
+            }
+
+            my$("btn2").onclick = function() {
+                timeId = setInterval(clock, 1000);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+    <button id="btn1">停止</button>
+    <button id="btn2">继续</button>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 600px;
+            height: 400px;
+            margin: 50px auto 0;
+            background-image: url(images/ii/bg.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        /* 摩天轮 */
+        img:nth-child(1){
+            width: 300px;
+            height: 300px;
+            position: fixed;
+            left: 0;
+            top: -310px;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            animation: xuanzhuan 4s linear 0s infinite  ;
+        }
+        img[src="images/ii/boy.png"]{
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            left: 40px;
+            top: -610px;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            /* transform-origin: 0 170px; */
+            animation: tupian 4s linear 0s infinite;
+        }
+        @keyframes tupian {
+            from{
+                transform: rotate(0);
+            }to{
+                transform: rotate(-360deg);
+            }
+        }
+        @keyframes xuanzhuan {
+            from{
+                transform: rotate(0);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="images/ii/fsw.png" alt="">
+        <img src="images/ii/boy.png" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+    </div>
+</body>
+</html>

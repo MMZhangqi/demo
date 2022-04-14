@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <img id="img" src="images/timg.gif" alt="">
+
+    <script src="common.js"></script>
+    <script>
+        // 希望图片跟着鼠标飞，可以在任何的浏览器实现
+        // 1.window.event和事件对象event的兼容
+        // 2.clientX和clientY的单独使用，在IE8中需要用window.event.clientX
+        // 3.scrollTop和scrollLeft的兼容
+        // 4.pageX/pageY和clientX+scrollLeft/clientY+scrollTop的兼容
+        var evt = {
+            // 1.window.event和事件对象event的兼容
+            getEvent: function(e) {
+                return window.event || e;
+            },
+            // 2.clientX和clientY的单独使用，在IE8中需要用window.event.clientX
+            // 可视区域的横坐标：Google--->e.clientX   IE8--->window.event.clientX
+            getClientX: function(e) {
+                return this.getEvent(e).clientX;
+            },
+            getClientY: function(e) {
+                return this.getEvent(e).clientY;
+            } ,
+            // 3.scrollTop和scrollLeft的兼容
+            // 页面向左卷曲出去的横坐标
+            getScrollLeft: function() {
+                return window.pageXOffset || document.documentElement.scrollLeft;
+            },
+            // 页面向上卷曲出去的纵坐标
+            getScrollTop: function() {
+                return window.pageYOffset || document.documentElement.scrollTop;
+            },
+            // 4.pageX/pageY和clientX+scrollLeft/clientY+scrollTop的兼容
+            // 基于页面的横坐标
+            pageX: function(e) {
+                return this.getEvent(e).pageX ? this.getEvent(e).pageX : this.getEvent(e) + this.getScrollLeft();
+            },
+            // 基于页面的纵坐标
+            pageY: function(e) {
+                return this.getEvent(e).pageY ? this.getEvent(e).pageY : this.getEvent(e) + this.getScrollTop();
+            }
+        }
+
+        document.onmousemove = function() {
+            my$("img").style.left = evt.pageX(event) + "px";
+            my$("img").style.top = evt.pageY(event) + "px";
+        }
+    </script>
+</body>
+</html>

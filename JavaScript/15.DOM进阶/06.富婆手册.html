@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            text-decoration: none;
+        }
+        li {
+            list-style: none;
+            float: left;
+            padding: 1em;
+        }
+        #imageGallery img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>富婆通讯录</h1>
+    <ul id="imageGallery">
+        <li>
+            <a href="images/01.jpg" title="富婆A">
+                <img src="images/1.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="images/02.jpg" title="富婆B">
+                <img src="images/2.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="images/03.jpg" title="富婆C">
+                <img src="images/3.jpg" alt="">
+            </a>
+        </li>
+    </ul>
+    <img id="image" src="images/01.jpg" alt="">
+
+    <script>
+        var aObj = document.getElementsByTagName("a");
+        // 循环点击a
+        for(var i = 0; i < aObj.length; i++) {
+            aObj[i].onclick = function() {
+                // console.log(this.href);
+                document.getElementById("image").src = this.href;
+
+                // 阻止跳转
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+
+    <script src="common.js"></script>
+    <script>
+        // BOM：浏览器对象模型，操作浏览器的
+        // 在浏览器中有一个顶级对象 window ---> 皇上
+        // 页面中的顶级对象 document ---> 大内总管
+        // 页面中的所有内容都是属于浏览器的，即window的
+        // 顶级对象window是可以省略的
+
+        var num = 10;
+        console.log(window.num);
+        console.log(num);
+
+        function f1() {
+            console.log(this);
+        }
+        window.f1();
+        f1();
+
+        // window.document.write("aaaa");
+        // window.write("aaaa");// 报错
+        // document.write("aaaa");
+    </script>
+</body>
+</html>

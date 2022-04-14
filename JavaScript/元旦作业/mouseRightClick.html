@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        ul{
+            position: fixed;
+            z-index: 1;
+            list-style-type: none;
+            background-color: rgb(223, 218, 211);
+            width: 100px;
+            height: 75px;
+            text-align: center;
+            visibility: hidden;
+            top: 0;
+            left: 0;
+        }
+        li{
+            cursor: pointer;
+            list-style: none;
+            text-align: right;
+            padding-right: 10px;
+            border: 1px solid rgb(97, 91, 91);
+        }
+        li:hover{
+            background-color: rgb(227, 229, 232);
+        }
+        .cut{
+            width: 100px;
+            height: 25px;
+            background: url("images/ico.png") no-repeat ;
+        }
+        .copy{
+            width: 100px;
+            height: 25px;
+            background: url("images/ico.png") no-repeat 0px -25px;
+        }
+        .paste{
+            width: 100px;
+            height: 25px;
+            background: url("images/ico.png") no-repeat 0px -50px;
+        }
+    </style>
+    <script src="common.js"></script>
+</head>
+<body>
+    <ul id="menu">
+        <li class="cut">剪切</li>
+        <li class="copy">复制</li>
+        <li class="paste">粘贴</li>
+    </ul>
+</body>
+<script>
+    var menu = my$("menu");
+    document.oncontextmenu  = function(e){
+        menu.style.left = evt.getClientX() + "px";
+        menu.style.top = evt.getClientY() + "px";
+        menu.style.visibility = "visible";
+        return false;
+    }
+    document.onclick = function(){
+        menu.style.visibility = "hidden";
+    }
+</script>
+</html>

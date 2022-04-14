@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="common.js"></script>
+</head>
+<body>
+    <div id="header">
+        <div id="AllChecked">
+            <input type="checkbox" id="allCheckbox">全选
+        </div>
+        <span>商品信息</span>
+        <span>&nbsp;</span>
+        <span>单价</span>
+        <span>数量</span>
+        <span>金额</span>
+        <span>操作</span>
+    </div>
+    <div id="shopCar">
+        <div id="shoper">
+            <div class="shoper">
+                <div class="shopchecked">
+                    <input type="checkbox" class="allShopCheckbox">
+                    <span>店铺：</span>
+                    <a href="" class="shopName">华硕电脑自营店</a>
+                    <i class="icon-ww"></i>
+                </div>
+            </div>
+            <ul class="item-ul">
+                <li>
+                    <input type="checkbox">
+                </li>
+                <li>
+                    <img src="images/1.jpg" alt="">
+                    <div>
+                        <p class="despriction">
+                            Asus/华硕天选2代 air锐龙R7 RTX3070学生电竞游戏手提笔记本
+                        </p>
+                        <div>
+                            <img src="images/bank.png" alt="">
+                            <img src="images/flower.png" alt="">
+                            <img src="images/commit.jpg" alt="">
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <p class="shoper-type">
+                        硬盘容量：512GB 固态硬盘颜色分类：R7-4800H/RTX3050/144Hz钛空灰内存容量：16g
+                    </p>
+                </li>
+                <li>
+                    <p class="price">￥5999.00</p>
+                </li>
+                <li>
+                    <div class="count">
+                        <a href="#" class="btn">-</a>
+                        <input class="countInput" type="text" value="1" data-max="99999999" >
+                        <a hidden="#" class="btn">+</a>
+                    </div>
+                </li>
+                <li>
+                    <span class="money">￥5999.00</span>
+                </li>
+                <li>
+                    <p>
+                        <a href="#">移入收藏夹</a>
+                    </p>
+                    <p>
+                        <a href="#">删除</a>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div> 
+    <div class="countsum">
+        <div class="countbox">
+            <div class="checkbox">
+                <input type="checkbox" name="allchecked" id="allchecked">全选
+                <a href="#">删除</a>
+            </div>
+            <div class="countMoney">
+                <p>
+                    <span>已选择</span>
+                    <em id="checkedcount">0</em>
+                    <span>件商品</span>
+                </p>
+                <p>
+                    <span>
+                        合计&lt;不含运费&gt;: 
+                        <em id="checkedGoodPrice">0.00</em> 
+                    </span>
+                    <a href="#" class="toGetherMoney">结算</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 添加元素函数
+        function addElement(element,TagName,attr,fn){
+            var obj = document.createElement(TagName);
+            for(var key in attr){
+                obj.removeAttribute(attr)
+                obj.setAttribute(key,attr[key]);
+            }
+            element.appendChild(obj);
+            if(fn){
+                fn()
+            }
+        }
+        //    数据
+        var data = [
+           {
+               shopName:"华硕电脑自营店",
+               goodImg:"images/1.jpg",
+               googInformtion:"Asus/华硕天选2代 air锐龙R7 RTX3070学生电竞游戏手提笔记本",
+               goodtype:"硬盘容量：512GB 固态硬盘颜色分类：R7-4800H/RTX3050/144Hz钛空灰内存容量：16g",
+               price:5999.00,
+               count:1,
+               money:5999.00
+            },
+            {
+               shopName:"IWC万国官方旗舰店",
+               goodImg:"images/watch.jpg",
+               googInformtion:"IWC万国飞行员系列计时腕表新品机械手表男集装箱礼盒张若昀同款",
+               goodtype:"颜色分类：绿色",
+               price:53300.00,
+               count:1,
+               money:53300.00
+            },
+            {
+               shopName:"天猫国际进口超市",
+               goodImg:"images/lanbolegao.jpg",
+               googInformtion:"LEGO乐高拼装积木机械组系列兰博基尼SIAN 37跑车42115玩具成人",
+               goodtype:"",
+               price:2698.00,
+               count:1,
+               money:2698.00
+            }
+        ]
+        //    对象
+        var shopCar = my$("shopCar")
+        for(var i = 0; i < data.length; i++){
+            // 创建 shoper盒子
+            var shoper = document.createElement("div");
+            shoper.id = "shoper";
+            shopCar.appendChild(shoper);
+            // shoper下面 class名为 shoper的div
+            var shopercls = document.createElement("div");
+            shopercls.className = "shoper";
+            shoper.appendChild(shopercls);
+            
+            addElement(shopercls,"div",{
+                class: "shopchecked"
+            });
+            var allShopCheckbox = document.createElement("input");
+            allShopCheckbox.setAttribute("type","checkbox");
+            allShopCheckbox.setAttribute("class","allShopCheckbox");
+            cl$("shopchecked")[i+1].appendChild(allShopCheckbox);
+            var span = document.createElement("span");
+            span.innerHTML = "店铺：";
+            cl$("shopchecked")[i+1].appendChild(span);
+            var ShopName = document.createElement("a");
+            ShopName.className = "shopName";
+            ShopName.href = "#";
+            cl$("shopchecked")[i+1].appendChild(ShopName);
+            var ilogo = document.createElement("i");
+            ilogo.className = "icon-ww";
+            cl$("shopchecked")[i+1].appendChild(ilogo);
+
+            // 创建ul盒子
+            var ulobj = document.createElement("div");
+            ulobj.className = "item-ul";
+            shoper.appendChild(ulobj);
+            for(var j = 0; j < 7; j++){
+                addElement(ulobj,"li",{});
+            }
+            // 第一个li
+            var lis = ulobj.children;
+            addElement(lis[0],"input",{
+                type: "checkbox"
+            });
+            // 第二个li
+            addElement(lis[1],"img",{
+            });
+            addElement(lis[1],"div",{
+            });
+            addElement(lis[1].children[1],"p",{
+                class: "despriction"
+            });
+            addElement(lis[1].children[1],"div",{
+            });
+            addElement(lis[1].children[1].children[1],"img",{
+                src: "images/bank.png"
+            });
+            addElement(lis[1].children[1].children[1],"img",{
+                src: "images/flower.png"
+            });
+            addElement(lis[1].children[1].children[1],"img",{
+                src: "images/commit.jpg"
+            });
+            // 第三个li
+            addElement(lis[2],"p",{
+                class:"shoper-type"
+            });
+            // 第四个li
+            addElement(lis[3],"p",{
+                class:"price"
+            });
+            // 第五个li
+            addElement(lis[4],"div",{
+                class: "count"
+            });
+            addElement(lis[4].children[0],"a",{
+                herf: "#",
+                class: "btn"
+            });
+            addElement(lis[4].children[0],"input",{
+                type: "text",
+                dataMax: "999",
+                value: "1",
+                class: "countInput"
+            });
+            addElement(lis[4].children[0],"a",{
+                herf: "#",
+                class: "btn"
+            });
+             // 第六个li
+             addElement(lis[5],"span",{
+                class: "money"
+            });
+             // 第七个li
+            addElement(lis[6],"p",{});
+            addElement(lis[6].children[0],"a",{
+                herf:"#",
+            });
+            addElement(lis[6],"p",{});
+            addElement(lis[6].children[1],"a",{
+                herf:"#"
+            });
+            for(key in data[i]){
+                ShopName.innerHTML = data[i]["shopName"];
+                lis[1].children[0].setAttribute("src",data[i]["goodImg"]);
+                lis[1].children[1].children[0].innerHTML = data[i]["googInformtion"];
+                lis[2].children[0].innerHTML = data[i]["goodtype"];
+                lis[3].children[0].innerHTML = "￥"+data[i]["price"];
+                lis[4].children[0].children[0].innerHTML = "-";
+                lis[4].children[0].children[2].innerHTML = "+";
+                lis[5].children[0].innerHTML = "￥"+data[i]["money"];
+                lis[6].children[0].children[0].innerHTML = "移入收藏夹";
+                lis[6].children[1].children[0].innerHTML = "删除";
+            }
+        }
+   </script>
+     <script>
+        // 全选checkbox
+        var allchecked = my$("allchecked");
+        var uls = cl$("item-ul");//商品栏
+        var shopcheckedInput = cl$("allShopCheckbox");//店铺全选
+        console.log(shopcheckedInput);
+        var count = 0;//数量
+        var money = 0;//总计金额
+        var flag = true;
+        // 所有checkbox
+        var inputchecked = document.querySelectorAll("input[type ='checkbox']");
+        for(var k = 0; k < inputchecked.length; k++) {
+            inputchecked[k].onchange = function () {
+                // 全选事件
+                if(inputchecked[inputchecked.length-1].checked||inputchecked[0].checked) {
+                    for(var i = 0; i < inputchecked.length; i++) {
+                        flag ? inputchecked[i].checked = true : inputchecked[i].checked = false; 
+                    }
+                    flag = !flag;
+                }
+                // 选中的商品件数 和 金额
+                my$("checkedcount").innerHTML = "0";
+                my$("checkedGoodPrice").innerHTML = "0";
+                for(var i = 0; i < uls.length; i++) {
+                    if(uls[i].children[0].children[0].checked) {
+                        count += parseInt(uls[i].children[4].children[0].children[1].value);
+                        money += parseInt(uls[i].children[5].children[0].innerHTML.replace("￥",""));
+                    }
+                }
+                my$("checkedcount").innerHTML = count;
+                my$("checkedGoodPrice").innerHTML = money;
+                count = 0;
+                money = 0;
+            }   
+        }
+    </script>
+</body>
+</html>

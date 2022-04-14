@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="btn" type="button" value="点击修改p标签内容">
+    <div id="box">
+        <p>马上周末好开心</p>
+        <p>马上周末好开心</p>
+        <p>马上周末好开心</p>
+        <p>马上周末好开心</p>
+        <p>马上周末好开心</p>
+        <p>马上周末好开心</p>
+        <p>马上周末好开心</p>
+    </div>
+    <p>我也是p</p>
+    <script>
+        /* 
+            伪数组：
+            1.具有.length属性
+            2.按索引的方式操作数据和对象
+            3.不具有.pop()、.push()等方法
+        */
+        var btn = document.getElementById("btn");
+        var box = document.getElementById("box");
+        console.log(box);
+        var pObj = box.getElementsByTagName("p");
+        console.log(pObj);
+        btn.onclick = function() {
+            // pObj[0].innerText = "但是不知道干什么";
+            for(var i = 0; i < pObj.length; i++) {
+                pObj[i].innerText = "但是不知道干什么";
+            }
+        }
+    </script>
+</body>
+</html>

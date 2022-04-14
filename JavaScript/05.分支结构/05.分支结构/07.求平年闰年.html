@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 闰年：能被4整除，但不能被100整除；或者能被400整除
+        var year = parseInt(prompt('请输入年份：'));
+        /* if(!isNaN(year)) {
+            if(year % 4 == 0 && year % 100 != 0) {
+                console.log(year + '是闰年');
+            }else if(year % 400 == 0) {
+                console.log(year + '是闰年');
+            }else {
+                console.log(year + '是平年');
+            }
+        }else {
+            alert('输入错误，请输入正确年份（正整数）！')
+        } */
+
+        if(!isNaN(year)) {
+            if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                console.log(year + '是闰年');
+            }else {
+                console.log(year + '是平年');
+            }
+        }else {
+            alert('输入错误，请输入正确年份（正整数）！')
+        }
+    </script>
+</body>
+</html>

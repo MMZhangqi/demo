@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        img {
+            /* filter：滤镜属性，默认值none */
+
+            /* blur(px)：高斯模糊，值越大越模糊 */
+            /* filter: blur(0px); */
+
+            /* brightness(%)：亮度，默认值是100%，0%会全黑，大于100%越来越亮 */
+            /* filter: brightness(100%); */
+
+            /* contrast(%)：对比度，默认值100%，0%全灰，大于100%对比度越来越强 */
+            /* filter: contrast(100%); */
+
+            /* drop-shadow(h-shadow v-shadow blur spread color)：图片阴影 */
+            /* filter: drop-shadow(3px 3px 5px); */
+
+            /* grayscale(%)：灰度，默认值0%，100%全灰 */
+            /* filter: grayscale(0%); */
+
+            /* hue-rotate(deg)：色相旋转，默认值0deg，没有最大值，超过360deg相当于绕了一圈 */
+            /* filter: hue-rotate(0deg); */
+
+            /* invert(%)：反转输入图像，默认值0%，100%完全反转 */
+            /* filter: invert(0%); */
+
+            /* opacity(%)：透明度，默认值100%，0%完全透明 */
+            /* 虽然与opacity很像，不同之处在于通过filter设置opacity一些浏览器会提供硬件加速 */
+            /* filter: opacity(100%); */
+
+            /* saturate(%)：饱和度，默认值100%，0%完全不饱和，超过100%高饱和状态 */
+            /* filter: saturate(100%); */
+
+            /* sepia(%)：深褐色。默认值0%，100%完全深褐色 */
+            filter: sepia(0%);
+
+            /* 滤镜的使用，顺序决定结果 */
+        }
+    </style>
+</head>
+<body>
+    <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fup.enterdesk.com%2Fedpic_source%2Fec%2F14%2Fc0%2Fec14c07bbdc5ff0ff18dbb416bc55ba5.jpg&refer=http%3A%2F%2Fup.enterdesk.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1637244894&t=a4bed20d5eff97259134335ec8075ec1" alt="">
+</body>
+</html>

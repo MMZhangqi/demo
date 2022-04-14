@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        一、JavaScript是什么？
+            简称js
+            - 是一门脚本语言
+            - 是一门嵌入式语言
+            - 是一门“对象模型”语言
+            - 是一门解释性语言
+            - 是一门动态类型的语言
+     -->
+    <!-- 
+        二、js三个部分
+        1.ECMAScript标准 --- js基本语法
+        2.DOM --- Document Object Model 文档对象模型
+        2.BOM --- Browser Object Model 浏览器对象模型
+    -->
+    <!-- 
+        三、js的作用
+            解决用户&浏览器之间的交互问题
+    -->
+    <!-- 
+        四、js代码的书写
+            1.在html标签里面写
+            2.创建script标签，在双标签中写js代码，暂时放在</body>的前面
+            3.创建外部js文件，需要script标签中的src="js文件路径"导入进来
+     -->
+    <!-- 
+        五、js代码的注意事项
+            1.script标签可以写很多对
+            2.在一对script标签中，有错误代码，那么该错误代码后面的内容不会执行
+            3.在一对script标签中，有错误代码，不会影响后面script标签中js执行
+            4.在script标签中有一个属性，type="text/javascript"，可省略
+     -->
+    
+    <input onclick="alert('JavaScript第一节课')" type="button" value="点我">
+
+    <script>
+        alert(888)
+        alert(999)
+    </script>
+    <script>
+        alert('Cherry')
+    </script>
+
+    <script src="js/index.js"></script>
+</body>
+</html>

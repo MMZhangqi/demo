@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #ulObj {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">点击创建</button>
+    <div id="box"></div>
+
+    <script src="common.js"></script>
+    <script>
+        // my$("btn").onclick = function() {
+        //     my$("box").innerHTML = "<ul><li>00001</li><li>00002</li><li>00003</li><li>00004</li></ul>"
+        // }
+
+        var names = ['强哥', '庄哥', '唐小翔', '阳哥', '沛哥'];
+        my$("btn").onclick = function() {
+            // 1.创建ul并添加到ul末尾
+            var ulObj = document.createElement("ul");
+            ulObj.id = "ulObj";
+            my$("box").appendChild(ulObj);
+            for(var i = 0; i < names.length; i++) {
+                // 2.创建li，添加到ul里面
+                var liObj = document.createElement("li");
+                liObj.innerText = names[i];
+                ulObj.appendChild(liObj);
+                // onmouseover鼠标移入
+                liObj.onmouseover = function() {
+                    this.style.backgroundColor = "pink";
+                    this.style.cursor = "pointer";
+                }
+                // onmouseout鼠标移出
+                liObj.onmouseout = function() {
+                    this.style.backgroundColor = "";
+                    this.style.cursor = "";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

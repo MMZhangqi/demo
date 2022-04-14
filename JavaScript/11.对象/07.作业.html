@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.课堂案例两边
+        // 2.分别用三种方法给自己找个对象
+        // 3.工厂模式批量创建小猫：颜色、品种、年龄   抓鱼、洗脸...
+        
+        // 1构造函数创建对象
+        var obj = new Object();
+        obj.name = "张sss";
+        obj.age = 18;
+        obj.hobby = function(){
+            console.log("唱跳、rap、篮球");
+        }
+        console.log(obj);
+        obj.hobby();
+
+        // 2 自定义构造函数
+        var Person = function(name, age, hobby){
+            this.name = name;
+            this.age = age;
+            this.hobby = function(){
+                console.log("看日出");
+            }
+        }
+        var obj1 = new Person("龙王",12);
+        console.log(obj1.name);
+
+        // 3字面量创建对象
+        var obj2 = {
+            name : "张i看",
+            age : 123,
+            hobby : function(){
+                console.log("iusgf");
+            }
+        }
+        console.log(obj2);
+
+        // 工厂模式创建小猫
+        function Cat( color, type, age, hobby, name){
+            var obj = new Object();
+            obj.color = color;
+            obj.type = type;
+            obj.age = age;
+            obj.hobby = hobby;
+            obj.name = name;
+            obj.catInformation = function(){
+                console.log("我是一只"+obj.color+"的"+obj.type+",我的名字叫"+obj.name+",今年"+obj.age+"岁,我喜欢"+obj.hobby);
+            }
+            return obj;
+        } 
+        var tomCat = new Cat( "Bule", "狸花猫", 3, "捉鱼", "Tom");
+        tomCat.catInformation();
+        var buleCat = new Cat( "Bule", "橘猫", 2, "捉鱼", "蓝猫");
+        buleCat.catInformation();
+    </script>
+</body>
+</html>

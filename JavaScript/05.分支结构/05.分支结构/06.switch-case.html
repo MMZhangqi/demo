@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            switch-case语法：
+                switch(某个具体条件) {
+                    case值1:
+                        判断的值和值1相等，就执行的代码块1;
+                        break;
+                    case值2:
+                        判断的值和值1相等，就执行的代码块2;
+                        break;
+                    case值3:
+                        判断的值和值1相等，就执行的代码块3;
+                        break;
+                    ... ...
+                    default:值都不相等的时候执行的代码块;
+                }
+
+                break：跳出整个语句
+                switch-case语句：多个分支，只执行一个
+
+                一般对范围判断时，用if系列
+                对具体值作判断时，用switch
+        */
+
+        // 已知等级，判断分数区间
+        var level = 'B';
+        switch(level) {
+            case'S':
+                console.log('100');
+                break;
+            case'A':
+                console.log('90-99');
+                break;
+            case'B':
+                console.log('80-89');
+                break;
+            case'C':
+                console.log('70-79');
+                break;
+            case'D':
+                console.log('60-69');
+                break;
+            default:
+                console.log('不及格');
+        }
+    </script>
+</body>
+</html>

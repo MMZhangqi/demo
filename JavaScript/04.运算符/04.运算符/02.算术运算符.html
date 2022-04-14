@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            一、算术运算符：JavaScript中提供了10个算术运算符
+                - 加法运算符：x + y
+                    * 用来求两个数值的和
+                    * JavaScript允许非数值相加
+                    * 如果是两个字符串相加，这时加法运算符会变成连接运算符，返回一个新的字符串，将两个原字符串拼接在一起
+                    * 如果一个运算子是字符串，另一个运算子是非字符串，这时非字符串会转成字符串，再拼接在一起
+                - 减法运算符：x - y
+                - 乘法运算符：x * y
+                - 除法运算符：x / y
+                - 余数运算符：x % y
+                    * 返回前一个运算子被后一个运算子除，所的余数
+                    * 注意：运算结果的正负号由第一个运算子的正负号决定的
+                    * 余数运算符还可以用于浮点数的运算，由于浮点数不是精确的值，无法完全得到完全准确的结果
+                - 自增运算符：++x 或 x++
+                - 自减运算符：--x 或 x--
+                    * 自增和自减运算符，是一元运算符，只需要一个运算子
+                    * 作用是将运算子首先转为数值，然后加上1或者减去1，会修改原始变量
+                    * 注意：放在变量之后，会先返回变量操作前的值，在进行自增/自减操作；反之放在变量之前，会先进行自增/自减操作，再返回变量操作后的值
+                - 数值运算符：+x
+                - 负数值运算符：-x
+                    * 数值运算符同样适用加号，是一元运算符
+                    * 数值运算符得作用在于可以将任何值转为数值（与Number函数作用相同）
+                    * 数值运算符和负数值运算符，都会返回一个新的值，而不会改变原始变量的值
+                - 指数运算符：x ** y
+                    * 完成指数运算，前一个运算子是底数，后一个运算子是指数
+                    * 注意：指数运算符是右结合，而不是左结合，多个指数运算符连用时，先进行最右边的计算
+         */
+
+        // ① 加法运算符
+        console.log(1 + 1);// 
+        console.log(true + true);// 2
+        // 注意：加法运算符是在运行时决定，到底是执行相加，还是执行连接呢
+        // 运算子不同，导致了不同的语法行为，这种现象称为“重载”（overload）
+
+        // ② 余数运算符
+        console.log(12 % 5);// 2
+        console.log(-1 % 2);// -1
+        console.log(1 % -2);// 1
+        console.log(-1 % -2);// -1
+        console.log(6.5 % 2.1);// 0.19999999999999973
+
+        // ③ 自增和自减运算符
+        var x = 1;
+        console.log(++x);// 2
+        console.log(x);// 2
+        console.log(--x);// 1
+        console.log(x);
+        // 注意！！！！！！！
+        var a = 1;
+        var b = 1;
+        console.log(++a);// 2
+        console.log(b++);// 1
+        console.log(b);
+        // a是先自增，然后返回新的值，所以得到2；b是先返回当前值，然后再自增，所以得到的1
+        var num = 10;
+        // console.log(num++ + ++num);// 22
+        console.log(++num + num++);// 22
+
+        var c = 1;
+        var d = '';
+        console.log(c++ + d + true + null + ++c);// 1truenull3
+
+        // ④ 数值运算符/负数值运算符
+        console.log(+true);// 1
+        console.log(+[]);// 0
+        console.log(+{});// NaN
+        var number = 1;
+        console.log(-number);// -1
+        console.log(-(-number));// 1
+
+        // ⑤ 指数运算符
+        console.log(2 ** 4);// 16
+        // 相当于(2 ** (3 ** 2))
+        console.log(2 ** 3 ** 2);// 512
+
+        // ⑥ 赋值运算符：用于给变量赋值
+        // 最常见的赋值运算符是等号
+        var cherry = 1;
+        var berry = cherry;
+        // 赋值运算符可以和其他运算符结合，形成变体
+        var m = 1;
+        var n = 1;
+        console.log(m += n);// m = m + n
+        console.log(m -= n);// m = m - n
+        console.log(m *= n);// m = m * n
+        console.log(m /= n);// m = m / n
+        console.log(m %= n);// m = m % n
+        console.log(m **= n);// m = m ** n
+    </script>
+</body>
+</html>

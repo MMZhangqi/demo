@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box {
+            width: 150px;
+            height: 3000px;
+            background-color: pink;
+            overflow: auto;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body id="body">
+    <button id="btn">点击获取</button>
+    <div id="box">
+        一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五一二三四五
+    </div>
+
+    <script src="common.js"></script>
+    <script>
+        my$("btn").onclick = function() {
+            console.log(my$("box").scrollWidth);// 内容没填满，获取元素内容区宽度（不含滚动条），内容超出，获取到实际内容区的宽度
+            console.log(my$("box").scrollHeight);// 内容没填满，获取元素内容区高度（不含滚动条），内容超出，获取到实际内容区的高度
+
+            // 向上卷曲出去的距离
+            console.log(my$("box").scrollTop);
+            // 向左卷曲出去的距离
+            console.log(my$("box").scrollLeft);
+        }
+
+        // 监听滚动事件
+        my$("box").onscroll = function() {
+            console.log(my$("box").scrollTop);
+        }
+
+        // 获取body元素
+        console.log(my$("body"));
+        console.log(document.body);
+        console.log(my$("body").scrollHeight);
+        document.body.onscroll = function() {
+            console.log(document.documentElement.scrollTop);
+        }
+        // 获取html元素
+        document.documentElement
+    </script>
+</body>
+</html>

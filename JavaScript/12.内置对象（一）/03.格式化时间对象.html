@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 2021年11月30日 21:33:00
+
+        // 封装一个获取指定格式的时间
+        function getDate(dt) {
+            var year = dt.getFullYear();
+            var month = dt.getMonth() + 1;
+            var date = dt.getDate();
+            var hours = dt.getHours();
+            var minutes = dt.getMinutes();
+            var seconds = dt.getSeconds();
+
+            // 补位
+            // month = month < 10 ? "0" + month : month;
+            // date = date < 10 ? "0" + date : date;
+            // hours = hours < 10 ? "0" + hours : hours;
+            // minutes = minutes < 10 ? "0" + minutes : minutes;
+            // seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            function bu(i) {
+                return i = i < 10 ? "0" + i : i;
+            }
+
+            var str = year + "年" + bu(month) + '月' + bu(date) + "日" + bu(hours) + ":" + bu(minutes) + ":" + bu(seconds);
+            return str;
+        }
+
+        // console.log(getDate(new Date()));
+        console.log(getDate(new Date("2022-01-01 00:00:00")));
+    </script>
+</body>
+</html>

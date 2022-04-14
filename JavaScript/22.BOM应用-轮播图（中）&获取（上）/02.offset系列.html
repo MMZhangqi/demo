@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            /* box-sizing: border-box; */
+        }
+        #father {
+            width: 200px;
+            height: 200px;
+            background-color: lightgreen;
+            margin: 50px;
+            padding: 100px;
+            position: relative;
+            box-shadow: 2px 2px 2px 10px #ccc;
+        }
+        #son {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            margin-left: 50px;
+            padding: 50px;
+            border: 10px solid #ccc;
+            position: absolute;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="father">
+        <div id="son"></div>
+    </div>
+    <button id="btn">点击获取</button>
+
+    <script src="common.js"></script>
+    <script>
+        my$("btn").onclick = function() {
+            console.log(my$("son").style.width);// 获取不到style中设置的样式
+            // 使用offset系列
+            console.log(my$("son").offsetWidth);
+            console.log(my$("son").offsetHeight);
+            console.log(my$("son").offsetLeft);
+            console.log(my$("son").offsetTop);
+        }
+        /* 
+            没有脱标：offsetLeft = 父级的margin-left + 父级的border-left + 父级的padding-left + 自己的margin-left + 自己的border-left
+            脱标：offsetLeft = 自己的left + 自己的margin-left
+        */
+    </script>
+</body>
+</html>

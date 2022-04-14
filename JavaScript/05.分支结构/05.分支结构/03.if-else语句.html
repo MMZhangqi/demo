@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            if-else：两个分支，只执行一个
+            语法：
+                if(表达式) {
+                    代码块1;
+                }else {
+                    代码块2;
+                }
+        */
+
+        // 1、问庄兄成年了吗？
+        var user = '庄兄';
+        var age = 26;
+        if(age >= 18) {
+            console.log(user + "已成年，可以结婚了");
+        }else {
+            console.log(user + "未成年，你麻麻喊你回家写作业！");
+        }
+
+        // 2、判断两个数中的最大值，把较大值输出，需要用户手动输入
+        var num1 = prompt("请输入一个数字：");
+        num1 = parseInt(num1);
+        var num2 = prompt("请在输入一个数字：");
+        num2 = parseInt(num2);
+        console.log(typeof num1);
+        if (num1 > num2) {
+            alert(num1 + "和" + num2 + "之间的较大值是：" + num1);
+        }else {
+            alert(num1 + "和" + num2 + "之间的较大值是：" + num2);
+        }
+    </script>
+</body>
+</html>

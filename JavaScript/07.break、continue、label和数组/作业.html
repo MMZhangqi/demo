@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 题1：
+        var arr1 = [7,8,1,2,3,4,5];
+        var sum = 0;
+        var minValue = arr1[0];
+        var maxValue = arr1[0];
+        // 求和
+        for(var i = 0; i < arr1.length; i++)
+        {
+            sum +=arr1[i];
+        }
+        console.log('所有数据的和：'+sum);
+        console.log('平均值：'+sum/arr1.length);
+        // 判断最大值、最小值
+        for(var i = 1; i < arr1.length; i++)
+        {
+            if(minValue >arr1[i])
+            {
+                minValue = arr1[i];
+            }
+            if(maxValue <arr1[i])
+            {
+                maxValue = arr1[i];
+            }
+        }
+        console.log('最大值：'+maxValue,'最小值：'+minValue);
+
+        // 题2：
+        var arr2 = ['cherry','berry','buleberry'];
+        var str = "";
+        for(var i = 0; i < arr2.length; i++)
+        {
+            str += arr2[i]; 
+            if(i < arr2.length-1)
+            {
+                str += '|';
+            }
+        }
+        console.log(str);
+
+        // 题3
+        var arr3 = [23,44,22,42,55,34];
+        for(var i = 0; i < (arr3.length / 2); i++)
+        {
+            var temp;
+            temp = arr3[i];
+            arr3[i] = arr3[arr3.length - i-1];
+            arr3[arr3.length - i-1] = temp; 
+        }
+        console.log(arr3);
+    </script>
+</body>
+</html>

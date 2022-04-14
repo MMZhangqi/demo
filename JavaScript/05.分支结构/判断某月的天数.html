@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 判断某月的天数
+    var num = parseInt(prompt("请输入月份"));
+    if(!isNaN(num) && num>0 && num<=12){
+        switch(num){
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12: 
+                alert("该月有31天");
+                break;
+            case 2:
+                alert("该月有28天");
+                break;
+            default:
+                alert("该月有30天");
+                break;
+        }
+    }else{
+        alert("input error！");
+    }
+</script>
+</html>

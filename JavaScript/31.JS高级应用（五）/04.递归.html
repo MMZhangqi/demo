@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 递归：函数中调用自己
+        // function f1() {
+        //     console.log("随便什么吧");
+        //     f1();
+        // }
+        // f1();
+
+        // 递归一定要写结束条件
+        var i = 0;
+        function f1() {
+            i++;
+            if(i < 5) {
+                f1();
+            }
+            console.log("自己调用自己");
+        }
+        f1();// 调用了五次
+
+        // 求和
+        function getSum(n) {
+            if(n == 1) {
+                return 1;
+            }
+            return n + getSum(n - 1);
+        }
+        console.log(getSum(6));
+
+        // 求一个数上各个位数上数字的和  1234--->1+2+3+4
+        function getSum2(n) {
+            // 传入的只有个位数直接返回
+            if(n < 10) {
+                return n;
+            }
+            return n % 10 + getSum2(parseInt(n / 10));
+        }
+        console.log(getSum2(2333));
+
+        // 斐波那契数列：1/1/2/3/5/8/13/21/34/55/89/144...
+        function getFib(n) {
+            if(n == 1 || n == 2) {
+                return 1;
+            }
+            // 后一个数 = 前两个数的和
+            return getFib(n - 1) + getFib(n - 2);
+        }
+        console.log(getFib(30));
+    </script>
+</body>
+</html>

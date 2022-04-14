@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* // 求1-n数字的和
+        function sum(n) {
+            var sum = 0;
+            for(var i = 0; i <= n; i++) {
+                sum += i;
+            }
+            return sum;
+        }
+        var result = sum(8);
+        // console.log(result); */
+
+        // 求n个数中最大值
+        function max() {
+            // 通过arguments获取实参的值，本质是对象，其实是伪数组，具有数组才会有的属性length
+            console.log(typeof arguments);
+            var max = arguments[0];
+            for(var i = 0; i < arguments.length; i++) {
+                if(max < arguments[i]) {
+                    max = arguments[i];
+                }
+            }
+            return max;
+        }
+        var result = max(12, 22, 56, 3, 99, 21, 888, -52, -79);
+        console.log(result);
+    </script>
+</body>
+</html>

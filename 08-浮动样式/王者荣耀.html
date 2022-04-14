@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: url(images/713611015135404.jpg) no-repeat;
+            background-size:cover;
+            width: 100%;
+        }
+        .nav{
+            height: 100px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.712);
+        }
+        ul{
+            width: 1350px;
+            height: 84px;
+            margin: 0 auto;
+        }
+        .logo{
+            width: 180px;
+            height: 100xp;
+            float: left;
+        }
+        .logo>img{
+           width: 180px;
+        }
+        li{
+            width: 120px;
+            height: 100px;
+            float: left;
+            list-style-type: none;
+            text-align: center;
+            padding-top: 22px;
+        }
+        ul::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        ul>li>h2{
+            font-weight: 400;
+            font-size: 20px;
+            color: rgb(216, 211, 211);
+            margin-bottom: 5px;
+        }
+        ul>li>span{
+            font-size: 13px;
+            color: rgb(109, 106, 106);
+        }
+        .nav_search{
+            width: 100px;
+            padding-top: 30px;
+        }
+        .nav_search+li{
+            width: 200px;
+            text-align: left;
+        }
+        .nav_search+li img{
+            border: 2px rgba(255, 255, 0, 0.534) solid;
+            border-radius: 50%;
+            float: left;
+            margin-left: 5px;
+        }
+        .nav_search+li div{
+            width: 200px;
+            height: 84px;
+            padding-left: 60px;
+        }
+        .nav_search+li div h2{
+            color: rgb(216, 211, 211);
+            font-size: 18px;
+            font-weight: 400;
+        }
+        .nav_search+li div span{
+            font-size: 13px;
+            color: rgb(109, 106, 106);
+        }
+        a{
+            text-decoration: none;
+        }
+        li:hover{
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <div class="nav"> 
+        <ul>
+            <!-- logo -->
+            <li class="logo">
+                <img src="images/logo.png" alt="">
+            </li>
+            <!-- 列表 -->
+            <li>
+                <h2>游戏资料</h2>
+                <span>DATA</span>
+            </li>
+            <li>
+                <h2>内容中心</h2>
+                <span>CONTENTS</span>
+            </li>
+            <li>
+                <h2>赛事中心</h2>
+                <span>MATCH</span>
+            </li>
+            <li>
+                <h2>百态王者</h2>
+                <span>CULTURE</span>
+            </li>
+            <li>
+                <h2>社区互动</h2>
+                <span>COMMUNITY</span>
+            </li>
+            <li>
+                <h2>玩家支持</h2>
+                <span>PLAYER</span>
+            </li>
+            <li>
+                <h2>IP新游</h2>
+                <span>NEW GAMES</span>
+            </li>
+            <!-- 搜索 -->
+            <li class="nav_search">
+                <a href=""><img src="images/nav_search.png" alt=""></a>
+            </li>
+            <!-- 登录模块 -->
+            <li class="nav_login">
+                <a href="">
+                    <img src="images/下载.png" alt="">
+                    <div>
+                        <h2>欢迎登录</h2>
+                        <span>登录后查看游戏战绩</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

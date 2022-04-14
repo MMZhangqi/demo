@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            JavaScript学习的三种对象：
+            1.内置对象---JavaScript系统自带的对象：Math、Date、String、Array、Object
+            2.自定义对象---自己定义的构造函数所创建的对象
+            3.浏览器对象---BOM时讲
+         */
+
+        /* 
+            实例对象：通过构造函数创建出来的对象
+            静态对象：不需要创建，直接就是一个对象，方法/属性可以直接通过方法名调用
+         */
+
+        // Math对象：静态对象
+
+        /* 
+            - Math.PI 圆周率π
+            - Math.floor(值) 向下取整
+            - Math.ceil(值) 向上取整
+            - Math.abs(值) 绝对值
+            - Math.round(值) 四舍五入，正数四舍五入，负数先忽略符号，五舍六入
+
+            - Math.max(很多数字) 取最大值
+            - Math.min(很多数字) 取最小值
+
+            - Math.pow(m, n) m的n次方的值
+            - Math.sqrt(16) 开平方根
+
+            - Math.random() 取随机数，区间0-1
+         */
+
+        // console.log(Math.PI);
+        // console.log(Math.floor(3.99));
+        // console.log(Math.ceil(1.00001));
+        // console.log(Math.abs(-10));
+        // console.log(Math.round(-5.5));
+
+        // console.log(Math.max(100, 9999, 2, 35, 88, 666));
+        // console.log(Math.min(100, 9999, 2, 35, 88, 666));
+
+        // console.log(Math.pow(2, 8));
+        // console.log(Math.sqrt(29));
+
+        // console.log(Math.random());
+        // 取0-10之间的随机整数
+        console.log(parseInt(Math.random() * 11));
+        // 取1-10之间的随机整数
+        console.log(Math.ceil(Math.random() * 10));
+        // 取10-50之间的随机整数
+        console.log(Math.floor(Math.random() * 41 + 10));
+    </script>
+</body>
+</html>

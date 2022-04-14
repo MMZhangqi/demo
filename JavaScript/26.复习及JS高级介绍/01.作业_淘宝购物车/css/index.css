@@ -1,0 +1,235 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+#top{
+    width: 100%;
+}
+.logo{
+    width: 800px;
+    margin: 0 auto;
+}
+.nav{
+    margin-top: 10px;
+    width: 800px;
+    margin: 0 auto;
+}
+.nav p{
+    font-size: 12px;
+    margin-top: 10px;
+}
+.nav p a{
+    color: #1460ad;
+    cursor: pointer;
+}
+.step{
+    width: 800px;
+    height: 20px;
+    margin: 10px auto;
+}
+.step ul{
+    width: 800px;
+}
+.step ul li{
+    float: left;
+}
+.firstLi{
+    background: #ff6600;
+    border-radius: 5px 0 0 5px ;
+    color: #ffffff;
+}
+.firstLi,.lastLi,.li3{
+    font-weight: 700;
+    width: 147px;
+    height: 23px;
+    line-height: 23px;
+    text-align: center;
+}
+.li3{
+    background: #e4e4e4;
+}
+.lastLi{
+    background: #e4e4e4;
+    border-radius: 0 5px 5px 0 ;
+}
+.secendLi{
+    width: 15px;
+    height: 23px;
+    background: #ff6600;
+    background-image: url("../images/taobao_bg.png");
+    background-repeat: no-repeat;
+}
+.li2{
+    width: 15px;
+    height: 23px;
+    background: #e4e4e4;
+    background-image: url("../images/taobao_bg.png");
+    background-repeat: no-repeat;
+}
+#bottom{
+    width: 800px;
+    margin: 0 auto;
+    font-size: 12px;
+}
+
+.check1{
+    width: 50px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+.title{
+    width: 350px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+.jifen{
+    width: 80px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+.money{
+    width: 80px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+.number{
+    width: 100px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+.num{
+    width: 80px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+.caozuo {
+    width: 60px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+.che{
+    width: 50px;
+    height: 92px;
+    border-top: 1px solid #d1ecff;
+    background: #e2f2ff;
+    text-align: center;
+}
+.details{
+    width: 350px;
+    height: 92px;
+    background: #e2f2ff;
+    border-top: 1px solid #d1ecff;
+    border-left: 1px solid #ffffff;
+}
+.integral{
+    width: 80px;
+    height: 92px;
+    background: #e2f2ff;
+    border-top: 1px solid #d1ecff;
+    border-left: 1px solid #ffffff;
+    text-align: center;
+}
+.price{
+    width: 80px;
+    height: 92px;
+    background: #e2f2ff;
+    border-top: 1px solid #d1ecff;
+    border-left: 1px solid #ffffff;
+    text-align: center;
+}
+.nums{
+    width: 100px;
+    height: 92px;
+    background: #e2f2ff;
+    border-top: 1px solid #d1ecff;
+    border-left: 1px solid #ffffff;
+    text-align: center;
+}
+.sum{
+    width: 80px;
+    height: 92px;
+    background: #e2f2ff;
+    border-top: 1px solid #d1ecff;
+    border-left: 1px solid #ffffff;
+    text-align: center;
+}
+.del{
+    width: 60px;
+    height: 92px;
+    background: #e2f2ff;
+    border-top: 1px solid #d1ecff;
+    border-left: 1px solid #ffffff;
+    text-align: center;
+}
+.tit{
+    width: 500px;
+    height: 30px;
+    text-align: left;
+    line-height: 30px;
+}
+.tit a{
+    color: #1965b3;
+    cursor: pointer;
+}
+.tit img{
+    cursor: pointer;
+}
+.details_title{
+    width: 260px;
+    /*border: 1px solid red;*/
+    float: right;
+}
+.img2{
+    margin-left: 5px;
+    vertical-align: middle;
+}
+.p1{
+    color: #1965b3;
+    cursor: pointer;
+}
+.shuliang{
+    width: 20px;
+    height: 12px;
+    text-align: center;
+    display:inline-block;
+    border:1px solid #000000;
+    line-height: 12px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+.jian{
+    vertical-align: middle;
+    cursor: pointer;
+}
+.jia{
+    vertical-align: middle;
+    cursor: pointer;
+}
+.xiaoji{
+    font-size: 16px;
+    font-weight: 700;
+    color: #ff6600;
+}
+#prices{
+    font-size: 16px;
+    font-weight: 700;
+    color: #ff6600;
+}
+.detel{
+    cursor: pointer;
+    color: #1965b3;
+}
+#zongjifen{
+    font-size: 16px;
+    font-weight: 700;
+    color: #ff6600;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            DOM：Document Object Model
+            文档：一个网页可以称为文档
+            节点：文档中的所有内容都是节点（标签、属性、文本、注释等）
+            元素：文档中的标签
+            属性：标签的属性
+        */
+    </script>
+    <!-- 初级 -->
+    <input type="button" value="点我" onclick="alert('让你点你还真点？')">
+
+    <!-- 中级 -->
+    <input type="button" value="中级点我" onclick="fn()">
+    <script>
+        function fn() {
+            alert("你没事儿吧？还点我？");
+        }
+    </script>
+
+    <!-- 终极 -->
+    <input id="btn" class="butt" type="button" value="终极点我">
+    <input id="btn2" class="butt" type="button" value="终极点我">
+    <script>
+        // 1、找节点、找对象
+        // var btn = document.getElementById("btn");
+        // var btn = document.getElementsByClassName("butt");
+        console.log(btn);
+
+        // 2、为该按钮节点注册点击事件
+        btn.onclick = function() {
+            alert("我又被点了......");
+            console.log("1111111");
+        }
+    </script>
+</body>
+</html>

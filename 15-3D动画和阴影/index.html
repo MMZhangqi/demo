@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: aliceblue;
+            transform: perspective(1000px);
+        }
+        .box{
+            width: 800px;
+            height: 500px;
+            margin: 200px auto 0;
+            transform-style: preserve-3d;
+            position: relative;
+            transform: rotateX(30deg);
+            animation: xuanzhuan 10s linear 0s infinite;
+        }
+        .box>div{
+            width: 300px;
+            height: 300px;
+            background-color: rgb(86, 86, 156,1);
+            font-size: 40px;
+            text-align: center;
+            padding-top: 120px;
+            border: 1px black solid;
+            position: absolute;
+           
+        }
+        .box>div:nth-of-type(1){
+            background-image: url(https://img0.baidu.com/it/u=3641830932,1995516539&fm=253&fmt=auto&app=120&f=GIF?w=300&h=300);
+            transform: translateZ(150px);
+        }
+        .box>div:nth-of-type(2){
+            background-image: url(https://img0.baidu.com/it/u=3641830932,1995516539&fm=253&fmt=auto&app=120&f=GIF?w=300&h=300);
+            transform: translateX(150px) rotateY(90deg);
+        }
+        .box>div:nth-of-type(3){
+            background-image: url(https://img0.baidu.com/it/u=3641830932,1995516539&fm=253&fmt=auto&app=120&f=GIF?w=300&h=300);
+            transform: translateY(150px) rotateX(90deg);
+        }
+        .box>div:nth-of-type(4){
+            background-image: url(https://img0.baidu.com/it/u=3641830932,1995516539&fm=253&fmt=auto&app=120&f=GIF?w=300&h=300);
+            transform: translateY(-150px) rotateX(-90deg);
+        }
+        .box>div:nth-of-type(5){
+            background-image: url(https://img0.baidu.com/it/u=3641830932,1995516539&fm=253&fmt=auto&app=120&f=GIF?w=300&h=300);
+            transform: translateX(-150px) rotateY(-90deg);
+        }
+        .box>div:nth-of-type(6){
+            background-image: url(https://img0.baidu.com/it/u=3641830932,1995516539&fm=253&fmt=auto&app=120&f=GIF?w=300&h=300);
+            transform: translateZ(-150px) rotateY(180deg) ;
+        }
+        @keyframes xuanzhuan {
+            0%{
+                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            }
+            25%{
+                transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg);
+            }
+            50%{
+                transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
+            }
+            75%{
+                transform: rotateX(0deg) rotateY(270deg) rotateZ(0deg);
+            }
+            100%{
+                transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

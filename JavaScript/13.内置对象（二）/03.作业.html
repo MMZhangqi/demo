@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            String作业：
+            给定一个字符串："gfisamfcirytlscmhfdgksd;'fcsahgi"，问题如下：
+            ① 字符串的长度
+            ② 取出指定位置的字符串，比如：0/5/7/9
+            ③ 查找指定字符串是否在上述字符串中存在
+            ④ 替换指定字符串，比如：s换成"发发发"
+            ⑤ 截取指定位置的字符串：比如：4-13位的
+            ⑥ 找出上述字符串中出现次数最多的字符和他的次数
+        */
+        var str = "gfisamfcirytlscmhfdgksd;'fcsahsgi";
+        // ① 字符串的长度
+        console.log(str.length);// 32
+        // ② 取出指定位置的字符串，比如：0/5/7/9
+        console.log(str.charAt(7));// c
+        // ③ 查找指定字符串是否在上述字符串中存在
+        console.log(str.indexOf("f"));// 1
+        // ④ 替换指定字符串，比如：s换成"发发发"
+        console.log(str.replace(/s/g, "发发发"));// gfi发发发amfcirytl发发发cmhfdgk发发发d;'fc发发发ahgi
+        // ⑤ 截取指定位置的字符串：比如：4-13位的
+        console.log(str.slice(4, 14));// amfcirytls
+        // ⑥ 找出上述字符串中出现次数最多的字符和他的次数
+        console.log(str);
+        var obj = {};
+        for(var i = 0; i < str.length; i++) {
+            var char = str.charAt(i);
+            console.log(char);
+            if(obj[char]) {
+                obj[char]++;
+            }else {
+                obj[char] = 1;
+            }
+        }
+        console.log(obj);
+        var max = 0;
+        var maxChar = null;
+        console.log(typeof maxChar);
+        for(var key in obj) {
+            if(max < obj[key]) {
+                max = obj[key];
+                maxChar = key;
+            }
+        }
+        console.log("出现次数最多的是：" + maxChar);
+        console.log("出现次数是：" + max);
+       
+        /* 
+            Array作业：
+            arr = [99, 22, 100, 85, 77, 46, 99, 77, 90]
+            ① 数组去重
+            ② 去掉一个最大值，去掉一个最小值，求平均值
+            ③ 用随机数生成20个整数，用数组存储起来
+            ④ 删除数组中的偶数，把剩余的用新数组输出
+        */
+        var arr = [99, 22, 100, 85, 77, 46, 99, 77, 90];
+        // ① 数组去重
+        function remove(array) {
+            // 存储不重复的元素
+            var newArr = [];
+            for (var i = 0; i < arr.length; i++) {
+                // 判断新数组中是否存在当前元素
+                if(newArr.indexOf(arr[i]) == -1) {
+                    newArr.push(arr[i]);
+                }
+            }
+            return newArr;
+        }
+        console.log(remove(arr));
+        // ② 去掉一个最大值，去掉一个最小值，求平均值
+        function average() {
+            var sum = 0;
+            arr.sort(function(a, b) {
+                return a-b;
+            })
+            console.log(arr);
+            // arr.pop();
+            // arr.shift();
+            // console.log(arr);
+            // for(var i = 0; i < arr.length; i++) {
+            //     sum += arr[i];
+            // }
+            // sum = sum / arr.length;
+            // return sum;
+            for(var i = 1; i < arr.length - 1; i++) {
+                sum += arr[i];
+            }
+            sum = sum / (arr.length - 2);
+            return sum;
+        }
+        console.log(average());
+        // ③ 用随机数生成20个整数，用数组存储起来
+        function num() {
+            var numArr = [];
+            while(numArr.length < 20) {
+                var random = Math.floor(Math.random() / Math.random()) +1;
+                if(numArr.indexOf(random) < 0) {
+                    numArr.push(random);
+                }
+            }
+            return numArr;
+        }
+        console.log(num());
+        // ④ 删除数组中的偶数，把剩余的用新数组输出
+        function spl(arr) {
+            var splArr = [];
+            for(var i = 0; i < arr.length; i++) {
+                if(arr[i] % 2 == 0) {
+                    arr.splice(i, 1);
+                    i--;
+                }
+                splArr = arr;
+            }
+            return splArr;
+        }
+        console.log(spl(arr));
+    </script>
+</body>
+</html>

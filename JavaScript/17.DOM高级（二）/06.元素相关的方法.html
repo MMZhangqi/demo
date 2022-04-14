@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">显示效果</button>
+    <button id="btn2">干掉第一个子元素</button>
+    <button id="btn3">干掉所有子元素</button>
+    <button id="btn4">复制最后一个子元素</button>
+    <div id="box"></div>
+
+    <script src="common.js"></script>
+    <script>
+        var i = 0;
+        my$("btn1").onclick = function() {
+            i++;
+            var obj = document.createElement("input");
+            obj.type = "button";
+            obj.value = "按钮" + i;
+            // // 1.添加到末尾
+            // my$("box").appendChild(obj);
+
+            // 2.添加到第一个子元素前面---insertBefore()方法在指定的已有的节点之前插入新的节点
+            my$("box").insertBefore(obj, my$("box").firstElementChild);
+        }
+
+        my$("btn2").onclick = function() {
+            // 移除父元素中第一个子元素  removeChild("子元素")
+            my$("box").removeChild(my$("box").firstElementChild);
+        }
+
+        my$("btn3").onclick = function() {
+            while(my$("box").firstElementChild) {
+                my$("box").removeChild(my$("box").firstElementChild);
+            }
+        }
+
+        my$("btn4").onclick = function() {
+            // 复制  克隆  cloneNode()
+            // my$("box").lastElementChild.cloneNode();
+            // console.log(my$("box").lastElementChild.cloneNode());
+            // 追加到末尾
+            var last = my$("box").lastElementChild.cloneNode();
+            my$("box").appendChild(last);
+        }
+    </script>
+</body>
+</html>

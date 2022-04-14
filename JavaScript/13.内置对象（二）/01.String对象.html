@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // String对象：字符串对象
+        var str = "Cherry";
+        console.log(str.length);
+        // 字符串可以看成是多个字符组成的数组（但是JavaScript没有字符类型），可以用length属性，可以通过for循环遍历
+        // 特性：不可变性 ---> 字符串的值是不能改变的
+        console.log(str[1]);// 可以访问
+        str = "Berry";
+        console.log(str);
+        str[3] = "A";
+        console.log(str);
+
+        /* 
+            字符串常用的方法和属性：
+            - .length ---> 返回字符串的长度
+            - .charAt(索引) ---> 返回值是指定索引位置的字符串，索引值超出返回空字符串
+            - .concat(字符串1, 字符串2, ..., 字符串n) ---> 返回值是拼接之后的新字符串
+            - .indexOf(要找的字符串, 从某个位置开始找的索引) ---> 返回值是要找的字符串第一次出现的的索引值，没找到返回-1
+            - .lastIndexOf(要找的字符串, 从某个位置开始找的索引) ---> 倒序查找，效果同上
+            - .replace("原来的字符串", "新的字符串") ---> 替换字符串
+            - .slice(开始的索引a, 结束的索引b) ---> 从索引为a的地方开始截取，到b的位置结束，不包括b（包前不包后），返回值是提取出来的字符串
+            - .substr(开始的位置, 截取的个数) ---> 返回值是提取出来的字符串
+            - .substring(开始的索引a, 结束的索引b) ---> 从索引为a的地方开始截取，到b的位置结束，不包括b（包前不包后），返回值是提取出来的字符串
+            - .split("要干掉的字符串", [分隔后留下的个数])
+            - .trim() ---> 去掉字符串前后端的空格
+            - .toLowerCase() ---> 转小写
+            - .toUpperCase() ---> 转大写
+        */
+
+        var str1 = '麒哥说他爱画大饼！很大的大饼！';
+        console.log(str1.charAt(9));
+
+        var str2 = "Cherry";
+        console.log(str2.concat("喜欢", "睡觉"));
+
+        var str3 = " What are you nong sha lei ?  ";
+        console.log(str3.indexOf("a"));// 不写第二个参数，默认从索引为0的位置开始找
+        console.log(str3.indexOf("a", 99));
+        console.log(str3.lastIndexOf("a"));// 不写第二个参数，默认从索引为length-1的位置开始找
+
+        console.log(str3.replace("a", "♪(^∇^*)"));
+        console.log(str3.replace(/a/, "\(^o^)/~"));// 正则表达式的语法
+        console.log(str3.replace(/a/g, "☆"));// 正则表达式的语法
+        console.log(str3);
+
+        console.log(str3.slice(4, 6));
+        console.log(str3.substr(7, 4));
+        console.log(str3.substring(4, 6));
+
+        var str4 = "迪奥|香奈儿|古驰|娇兰|兰蔻|杨树林";
+        console.log(str4.split("|", 6));
+        console.log(str4.split("|"));
+        var arr = str4.split("|");
+        for(var i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        }
+
+        console.log(str3.trim());
+        // 去除中间的空格
+        console.log(str3.replace(/ /g, ""));
+
+        var str5 = "aaaaaaHHHHHHHH";
+        console.log(str5.toLowerCase());
+        console.log(str5.toUpperCase());
+
+        console.log(str5.sub());
+        console.log(str5.sup());
+    </script>
+</body>
+</html>

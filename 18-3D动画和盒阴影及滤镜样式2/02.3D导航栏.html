@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #navbar {
+            width: 1000px;
+            height: 80px;
+            position: fixed;
+            left: 50%;
+            margin-left: -500px;
+        }
+
+        #box {
+            width: 100px;
+            height: 80px;
+            float: left;
+            transform-style: preserve-3d;
+            /* transform: rotateX(-28deg) rotateY(-52deg); */
+            transition: transform 1s;
+        }
+
+        #box:hover {
+            transform: rotateX(90deg) translateZ(20px);
+        }
+
+        #box>div {
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border: 1px solid #ccc;
+            position: absolute;
+        }
+
+        #box>div:nth-of-type(1) {
+            background: linear-gradient(#fff, #ccc);
+            transform: translateZ(20px);
+        }
+
+        #box>div:nth-of-type(2) {
+            background: linear-gradient(#ccc, #fff);
+            transform: rotateX(-90deg) translateZ(20px);
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div id="box">
+            <div>前端学院</div>
+            <div>课程内容</div>
+        </div>
+        <div id="box">
+            <div>前端学院</div>
+            <div>课程内容</div>
+        </div>
+        <div id="box">
+            <div>前端学院</div>
+            <div>课程内容</div>
+        </div>
+        <div id="box">
+            <div>前端学院</div>
+            <div>课程内容</div>
+        </div>
+        <div id="box">
+            <div>前端学院</div>
+            <div>课程内容</div>
+        </div>
+    </div>
+</body>
+</html>

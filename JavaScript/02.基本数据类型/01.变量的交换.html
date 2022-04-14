@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 变量的交换
+        var num1 = 10;
+        var num2 = 20; 
+
+        /* // ① 第三方变量
+        var temp;
+        // num1变量存储在temp中
+        temp = num1;
+        console.log(temp);
+        console.log(num1);
+        // num2变量存储在num1中
+        num1 = num2;
+        console.log(num1);
+        // temp变量存储在num2中
+        num2 = temp;
+        console.log(num1, num2); */
+
+        // ② 计算
+        num1 = num1 + num2;// 30
+        num2 = num1 - num2;// 10
+        num1 = num1 - num2;// 20
+        console.log(num1, num2);
+    </script>
+</body>
+</html>

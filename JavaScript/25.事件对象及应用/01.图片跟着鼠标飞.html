@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: pink;
+            height: 2000px;
+        }
+        #father {
+            width: 150px;
+            height: 150px;
+            background-color: lightblue;
+        }
+        #son {
+            width: 60px;
+            height: 60px;
+            background-color: lightgreen;
+        }
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="father">
+        <div id="son"></div>
+    </div>
+    <form action="">
+        <input type="submit" id="sub">
+    </form>
+    <img id="img" src="images/timg.gif" alt="">
+
+    <script src="common.js"></script>
+    <script>
+        my$("son").onclick = function(e) {
+            console.log("son");
+            // 阻止冒泡
+            // e.stopPropagation();
+            // window.event.cancelBubble = true;// IE特有的
+        }
+
+        my$("father").onclick = function() {
+            console.log("father");
+        }
+
+        my$("sub").onclick = function(e) {
+            // 阻止默认事件这个操作
+            // return false;
+            e.preventDefault();
+            console.log("666");
+        }
+
+        // 给页面注册鼠标移动事件
+        document.onmousemove = function(e) {
+            // console.log(arguments);
+            // console.log(e.clientX + "=======" + e.clientY);
+            // my$("img").style.left = e.clientX + "px";
+            // my$("img").style.top = e.clientY + "px";
+            // IE8没有event参数对象
+            // my$("img").style.left = window.event.clientX + "px";
+            // my$("img").style.top = window.event.clientY + "px";
+            
+            // pageX/pageY：基于页面的横纵坐标
+            // my$("img").style.left = e.pageX + "px";
+            // my$("img").style.top = e.pageY + "px";
+            // IE8没有event参数对象，没有page相关的坐标
+            // console.log(window.event);
+            my$("img").style.left = window.event.clientX + getScroll().left + "px";
+            my$("img").style.top = window.event.clientY + getScroll().top + "px";
+        }
+    </script>
+</body>
+</html>

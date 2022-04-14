@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .container {
+            font-size: 100px;
+        }
+        div {
+            font-size: 100px;
+        }
+        /* 交集选择器 */
+        p.container {
+            color: coral;
+        }
+        /* 并集选择器：逗号 */
+        p.container,
+        div {
+            border: 10px solid #ccc;
+        }
+        /* 后代选择器：空格 */
+        .gran p {
+            color: cornflowerblue;
+        }
+        /* 子代选择器：大于号 */
+        .gran>p {
+            background-color: pink;
+        }
+
+        /* 相邻元素选择器：加号 */
+        li+li {
+            color: red !important;
+        }
+        /* 兄弟元素选择器：波浪号 */
+        .lis~li {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <p class="container">ppppppppp</p>
+    <div>ddddddddddd</div>
+    <span class="container">sssssssss</span>
+    <a href="#">aaaaaaaaa</a>
+
+    <div class="gran">
+        <p>一级的p</p>
+        <p>一级的p</p>
+        <p>一级的p</p>
+        <p>一级的p</p>
+        <div>
+            <p>二级的p</p>
+            <p>二级的p</p>
+        </div>
+    </div> -->
+
+    <ul>
+        <li>00001</li>
+        <li>00002</li>
+        <li class="lis">00003</li>
+        <li>00004</li>
+        <li>00005</li>
+        <li>00006</li>
+        <li>00007</li>
+    </ul>
+</body>
+</html>

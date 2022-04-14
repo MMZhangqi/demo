@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            由于函数和其它数据类型地位平等，所以在JavaScript中又称函数为第一等公民。
+        */
+
+        // function f1(x, y) {
+        //     console.log(x + y);
+        // }
+        // f1(10, 20);
+
+        // 1.把函数当成参数
+        // function f2(fn) {
+        //     // console.log(fn);
+        //     // fn(1, 2);
+        // }
+        // f2(f1);
+
+        // 2.函数作为返回值
+        function f3() {
+            console.log('f3被调用了');
+            return function () {
+                console.log('函数被返回了');
+                return function () {
+                    console.log('函数被返回了');
+                }
+            }
+        }
+        // f3();
+        // var ff = f3();
+        // console.log(ff);
+        console.log("f3()函数：");
+        f3();
+        console.log("f3()()函数：");
+        f3()();
+        console.log("f3()()()函数：");
+        f3()()();
+    </script>
+</body>
+</html>

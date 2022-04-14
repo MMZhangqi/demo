@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 500px;
+            height: 500px;
+            margin: auto;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">隐藏</button>
+    <div id="box"></div>
+
+    <script>
+        // 属性：写在标签里
+        // 样式：写在css样式表
+        // 凡是在css中多个单词并且用-连接的，在js操作的时候，不能用-，要遵循驼峰命名法
+        document.getElementById("btn").onclick = function() {
+            // 设置样式：对象.style.样式名 = "样式值";
+            var box = document.getElementById("box");
+            // box.style.width = "300px";
+            // box.style.height = "300px";
+            // box.style.backgroundColor = "yellow";
+            // console.log(this.innerText);
+            if(this.innerText == "隐藏") {
+                box.style.visibility = "hidden";
+                this.innerText = "显示";
+            }else {
+                box.style.visibility = "visible";
+                this.innerText = "隐藏";
+            }
+        }
+    </script>
+</body>
+</html>

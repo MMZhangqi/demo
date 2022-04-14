@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>CHANEL</title>
+    <style>
+        .title{
+            width: 200px;
+            margin:30px auto 30px;
+        }
+        .bigimg{
+            width:max-content;
+            margin:0px auto 10px;
+        }
+        .description,
+        .description+div
+        {
+            width: fit-content;
+            margin:20px auto 0px;
+        }
+        /* 后代选择器 */
+        .description span,
+        .description~div span~span{
+            margin-left: 30px;
+            color: rgba(0, 0, 0, 0.424);
+        }
+        /* 相邻元素选择器 */
+        /* 第一行字符最后一个 */
+        /* 第二行字符 */
+        .description~div span{
+            font-size:18px;
+        }
+        small{
+            color: rgba(0, 0, 0, 0.424);
+        }
+        .Introduce{
+            width: fit-content;
+            margin: 7px auto 0;
+        }
+        .Introduce+div {
+            width: fit-content;
+            margin-top:70px;
+        }
+        small~small{
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <img src="./images/logo_chanel.svg" alt="logo_chanel" title="logo_chanel" width="200px">
+    </div>
+    <div class="bigimg">
+        <img src="./images/1920_fr_event.jpg" alt="" width="960px" height="">
+    </div>
+    <div class="description">
+        <span>高级定制服</span>
+        <span>精品</span>
+        <span>高级珠宝</span>
+        <span>腕表</span>
+        <span>INSIDE CHANEL</span>
+    </div>
+    <div>
+        <span>香水</span>
+        <span>彩妆</span>
+        <span>护肤品</span>
+    </div>
+    <div class="Introduce">
+        <small>————线上香水与美容品专卖店————</small>
+    </div>
+    <div>
+        <small>FAQ</small>
+        <small>联系我们</small>
+        <small>工作机会</small>
+        <small>法律声明</small>
+        <small>隐私政策</small>
+        <small>寻找经销店铺</small>
+        <small>邮件订阅</small>
+    </div>
+</body>
+</html>

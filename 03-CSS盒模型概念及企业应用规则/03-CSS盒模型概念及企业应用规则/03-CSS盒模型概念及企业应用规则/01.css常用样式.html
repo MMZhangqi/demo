@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /* body {
+            background-color: pink;
+        } */
+        h1 {
+            width: 200px;
+            background-color: pink;
+
+            /* ① 边框 */
+            /* border: 边框宽度 边框样式 边框颜色 */
+            /* 
+                solid：直线
+                dashed：虚线
+                dotted：点线
+                double：双实线
+             */
+            /* border: 10px double red; */
+            /* 
+                border-top：上边框
+                border-right：右边框
+                border-bottom：下边框
+                border-left：左边框
+             */
+            /* border-top: 10px solid red; */
+            /* 
+                一个值：四个方向
+                两个值：上下 左右
+                三个值：上 左右 下
+                四个值：上 右 下 左
+             */
+             /* 边框宽度 */
+            /* border-width: 10px 20px 30px 40px; */
+            /* 边框样式 */
+            /* border-style: solid dashed double dotted; */
+            /* 边框颜色 */
+            /* border-color: red blue green yellow; */
+
+            /* ② 外边距 */
+            /* ②-1 水平位置 */
+            margin-left: 200px; 
+            margin-right: 100px;
+            /* ②-2 垂直位置 */
+            margin-top: 100px; 
+            margin-bottom: 100px;
+        }
+
+        div {
+            /* width: 0;
+            height: 0;
+            border-width: 0 100px 100px;
+            border-style: solid;
+            border-color: red transparent yellow; */
+            /* transparent：透明的 */
+            /* margin-left: 100px; */
+            /* margin-bottom: 100px; */
+
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+        }
+        span {
+            /* 行内元素只有水平位置会生效，垂直无用 */
+            margin-top: 100px;
+            margin-left: 20px;
+        }
+
+        a {
+            /* 清楚a标签默认样式 */
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS常用样式</h1>
+    <div></div>
+    <!-- <div></div> -->
+
+    <!-- &nbsp;尽量少用 -->
+    <span>aa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;aa</span>
+
+    <span>啊啊</span>
+    <span>啊啊</span>
+
+    <a href="#">百度一下</a>
+</body>
+</html>

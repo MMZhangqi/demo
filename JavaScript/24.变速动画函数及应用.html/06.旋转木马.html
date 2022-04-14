@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/css.css">
+    <script src="common.js"></script>
+    <script>
+        var config = [
+            {
+                width: 400,
+                top: 20,
+                left: 50,
+                opacity: 0.2,
+                zIndex: 2
+            },//0
+            {
+                width: 600,
+                top: 70,
+                left: 0,
+                opacity: 0.8,
+                zIndex: 3
+            },//1
+            {
+                width: 800,
+                top: 100,
+                left: 200,
+                opacity: 1,
+                zIndex: 4
+            },//2
+            {
+                width: 600,
+                top: 70,
+                left: 600,
+                opacity: 0.8,
+                zIndex: 3
+            },//3
+            {
+                width: 400,
+                top: 20,
+                left: 750,
+                opacity: 0.2,
+                zIndex: 2
+            }//4
+        ];
+
+        // 加载事件
+        window.onload = function() {
+            var flag = true;
+            // 1.图片散开
+            var list = ele$("li");
+            function move() {
+                for(var i = 0; i < list.length; i++) {
+                    // 设置每一个li的width、top、left、opacity、zIndex
+                    animateStyle(list[i], config[i], function() {
+                        flag = true;
+                    })
+                }
+            }
+            // 初始化
+            move();
+
+            // 2.鼠标移入移出事件
+            my$("slide").onmouseover = function() {
+                animateStyle(my$("arrow"), {
+                    opacity: 1
+                })
+            }
+            my$("slide").onmouseout = function() {
+                animateStyle(my$("arrow"), {
+                    opacity: 0
+                })
+            }
+
+            // 3.点击按钮显示对应的图片
+            my$("arrRight").onclick = function() {
+                if(flag) {
+                    config.push(config.shift());
+                    move();
+                    flag = false;
+                }
+            }
+            my$("arrLeft").onclick = function() {
+                if(!flag) {
+                    return
+                }
+                flag = false;
+                config.unshift(config.pop());
+                move();
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="wrap" class="wrap">
+        <div id="slide" class="slide">
+            <ul>
+                <li><a href="#"><img src="images/slidepic1.jpg" alt=""></a></li>
+                <li><a href="#"><img src="images/slidepic2.jpg" alt=""></a></li>
+                <li><a href="#"><img src="images/slidepic3.jpg" alt=""></a></li>
+                <li><a href="#"><img src="images/slidepic4.jpg" alt=""></a></li>
+                <li><a href="#"><img src="images/slidepic5.jpg" alt=""></a></li>
+            </ul>
+            <div id="arrow" class="arrow">
+                <a href="javascript:void(0);" class="prev" id="arrLeft"></a>
+                <a href="javascript:;" class="next" id="arrRight"></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            作业：随机生成十六进制的颜色值 #开头，每一位都是0-f（0 1 2 3 4 5 6 7 8 9 a b c d e f）
+        */
+        function getColor(){
+            var arr1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'];
+            var str = '#';
+            for(var i = 0; i < 6; i++)
+            {
+                str += arr1[Math.round(Math.random()*15)];
+            }
+            console.log(str);
+        }
+        getColor();
+    </script>
+</body>
+</html>s

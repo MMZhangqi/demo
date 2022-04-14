@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body,
+        ul, 
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #box {
+            width: 606px;
+            height: 306px;
+            border: 10px solid #ccc;
+            margin: 100px auto 0;
+            position: relative;
+        }
+
+        #screen {
+            width: 586px;
+            height: 286px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #screen>ul {
+            width: 3516px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #screen>ul>li {
+            float: left;
+        }
+
+        #focus {
+            display: none;
+        }
+
+        #focus>span {
+            display: block;
+            width: 30px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, .3);
+            text-align: center;
+            line-height: 50px;
+            position: absolute;
+            top: 50%;
+            margin-top: -25px;
+            cursor: pointer;
+            font-size: 24px;
+            color: #fff;
+            transition: background-color .3s;
+        }
+
+        #focus>span:hover {
+            background-color: rgba(0, 0, 0, .5);
+        }
+
+        #focus>span#left {
+            left: 0;
+        }
+
+        #focus>span#right {
+            right: 0;
+        }
+
+        #point {
+            position: absolute;
+            right: 30px;
+            bottom: 10px;
+        }
+
+        #point>li {
+            float: left;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        #point>li+li {
+            margin-left: 10px;
+        }
+
+        #point>li.current {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="screen" id="screen">
+            <ul id="images">
+                <li>
+                    <img src="images/1.png" alt="">
+                </li>
+                <li>
+                    <img src="images/2.png" alt="">
+                </li>
+                <li>
+                    <img src="images/3.png" alt="">
+                </li>
+                <li>
+                    <img src="images/4.png" alt="">
+                </li>
+                <li> 
+                    <img src="images/5.png" alt="">
+                </li>
+            </ul>
+            <ol id="point"></ol>
+        </div>
+        <div id="focus">
+            <span id="left">&lt;</span>
+            <span id="right">&gt;</span>
+        </div>
+    </div>
+
+    <script src="common.js"></script>
+    <script>
+        var box = my$("box");// 装轮播图的盒子
+        var screen = my$("screen");// 相框
+        var imgWidth = screen.offsetWidth;// 相框的宽度
+        var ulObj = my$("images");// 装图片的ul
+        var list = ulObj.getElementsByTagName("li");// 所有图片的li节点
+        var point = my$("point");// 装小圆点的ol
+        var btnBox = my$("focus");// 左右两侧按钮的盒子
+        var flag = true;
+
+        // 1.创建小按钮，根据小按钮切换对应图片
+        for(var i = 0; i < list.length; i++) {
+            var liObj = document.createElement("li");
+            point.appendChild(liObj);
+            liObj.setAttribute("index", i);
+            // 注册鼠标移入事件
+            liObj.onmouseover = function() {
+                // 先干掉所有li的背景色
+                for(var j = 0; j < point.children.length; j++) {
+                    point.children[j].removeAttribute("class");
+                }
+                this.className = "current";
+                // 获取对应的索引值 
+                var picIndex = this.getAttribute("index");
+                // 移动装图片的ul
+                animateBian(ulObj, -picIndex * imgWidth);
+            }
+        }
+        // 设置point第一个li有默认背景颜色
+        point.firstElementChild.className = "current";
+
+        // 2.自动播放
+        // 克隆第一张图片添加到最后面
+        ulObj.appendChild(ulObj.children[0].cloneNode(true));
+        var timeId = setInterval(move, 1000);
+        var index = 0;
+        function move() {
+            flag = false;
+            if(index >= list.length - 1) {
+                // 直接跳转到第一张图片
+                index = 0;
+                ulObj.style.left = "0px";
+                flag = true;
+            }
+            index++;
+            animateBian(ulObj, -index * imgWidth);
+            // 判断小圆点
+            if(index == list.length - 1) {
+                // 把最后一个按钮的颜色干掉
+                point.children[point.children.length - 1].removeAttribute("class");
+                // 给第一个按钮设置颜色
+                point.children[0].className = "current";
+            }else {
+                // 先干掉所有li的背景色
+                for(var j = 0; j < point.children.length; j++) {
+                    point.children[j].removeAttribute("class");
+                }
+                point.children[index].className = "current";
+            }
+        }
+
+        // 3.鼠标移入移出
+        box.onmouseover = function() {
+            btnBox.style.display = "block";
+            clearInterval(timeId);
+        }
+        box.onmouseout = function() {
+            btnBox.style.display = "none";
+            timeId = setInterval(move, 1000);
+        }
+
+        // 4.点击两侧按钮
+        my$("right").onclick = move;
+        my$("left").onclick = function() {
+            if(index == 0) {
+                index = list.length - 1;
+                ulObj.style.left = -index * imgWidth + "px";
+            }
+            index--;
+            animateBian(ulObj, -index * imgWidth);/*  */
+            for(var j = 0; j < point.children.length; j++) {
+                    point.children[j].removeAttribute("class");
+                }
+                point.children[index].className = "current";
+        }
+    </script>
+</body>
+</html>

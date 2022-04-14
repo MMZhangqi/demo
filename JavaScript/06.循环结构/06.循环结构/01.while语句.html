@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 循环：重复执行某个操作
+        // 要有个结束条件，有一个计数器，迭代条件（怎么计数的）
+
+        /* 
+            while语法：
+                var 计数器的名字 = 0;
+                当循环条件为true时，执行循环体；
+                当循环条件为false时，结束循环。
+                while(循环条件) {
+                    执行循环体;
+                    计数器++;
+                }
+        */
+
+        /* var i = 0;
+        while(i <= 20) {
+            console.log("强哥跑了" + i + "圈");
+            i++;
+        } */
+
+        /* // 计算1-100之间所有整数的和
+        var i = 1;
+        var sum = 0;
+        while(i <= 100) {
+            // sum = i + sum;
+            sum += i;
+            i++;
+        }
+        console.log(sum); */
+
+        /* // 分别计算1-100之间奇数和偶数的和
+        var even = 2;
+        var odd = 1;
+        var sum_even = 0;
+        var sum_odd = 0;
+        while(even <= 100) {
+            sum_even += even;
+            even += 2;
+        }
+        while(odd <= 100) {
+            sum_odd += odd;
+            odd += 2;
+        }
+        console.log('1-100之间奇数和是：' + sum_odd);
+        console.log('1-100之间偶数和是：' + sum_even); */
+
+        /* // 计算6的阶乘
+        var mul = 1;
+        var pro = 1;
+        while(mul <= 6) {
+            pro = pro * mul;
+            mul++;
+        }
+        console.log(pro); */
+
+        // 求100以内7的倍数
+        var i = 1;
+        while(i <= 100) {
+            // 判断该数字能否被7整除
+            if(i % 7 == 0) {
+                console.log(i);
+            }
+            i++;
+        }
+    </script>
+</body>
+</html>

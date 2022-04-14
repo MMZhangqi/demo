@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 沙箱：独立、虚拟的环境，可以在环境中模拟真实的世界，所做的实验结果和真实世界的结果是一样的，但是不会影响真实世界
+        var num = 10;
+        // 沙箱环境
+        (function() {
+            var num = 100;
+            console.log(num);
+        })();
+
+        console.log(num);
+    </script>
+</body>
+</html>

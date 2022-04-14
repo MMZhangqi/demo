@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        p {
+            width: 900px;
+            height: 40px;
+            margin: 200px auto 0;
+            font-size: 24px;
+            color: #333;
+        }
+        #username {
+            width: 600px;
+            height: 40px;
+            border-radius: 20px;
+            border-color: #666;
+            padding: 20px;
+            font-size: 18px;
+        }
+        #spanId {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        昵称：
+        <input id="username" type="text" value="请输入昵称">
+        <span id="spanId"></span>
+    </p>
+
+    <script>
+        // 获取焦点：onfocus
+        // 失去焦点：onblur
+        var username = document.getElementById("username");
+        var spans = document.getElementById("spanId");
+        username.onfocus = function() {
+            if(this.value == "请输入昵称") {
+                this.value = "";
+            }
+        }
+        // 判断当前用户所输入的字符长度2-6，不满足则提示用户输入格式有误
+        username.onblur = function() {
+            if(this.value == "") {
+                this.value = "请输入昵称";
+            }else {
+                if(this.value.length < 2 || this.value.length > 6) {
+                    spans.innerText = "输入格式有误，请重新输入！";
+                    spans.style.color = "red";
+                    username.onfocus = function() {
+                        this.value = "";
+                        spans.innerText = "";
+                    }
+                }else {
+                    spans.innerText = "√";
+                    spans.style.color = "green";
+                    return this.value;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

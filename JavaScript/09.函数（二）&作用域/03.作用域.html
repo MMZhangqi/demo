@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            作用域：使用的范围
+            全局变量：用var声明的变量，可以在页面中任何位置使用
+
+            局部变量：函数内部定义的变量，在函数外面不能使用
+
+            全局作用域：全局变量使用的范围
+            局部作用域：局部变量使用的范围
+
+            块级作用域：一对大括号{}中可以堪称是一块，在这个区域中定义的变量只能在这个区域中使用，在目前用法中没有涉及到块级作用域
+
+            隐式全局变量：声明的变量没有var
+
+            区别：
+                - 全局变量不能被删除
+                - 隐式全局变量能被删除
+        */
+       
+        // function f1() {
+        //     var num1 = 10;
+        //     console.log(num1);
+        // }
+        // f1();
+
+        // console.log(num1);
+
+        // var num2 = 20;
+        // console.log(num2);
+
+        var a = 1;
+        b = 1;
+
+        delete a;
+        delete b;
+
+        console.log(typeof a);
+        console.log(typeof b);
+    </script>
+</body>
+</html>

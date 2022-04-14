@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        Person.prototype.eat = function() {
+            console.log("强哥要吃糖");
+        }
+        var per = new Person("强哥", "3岁");
+        per.__proto__.eat();
+        console.dir(per);
+        console.dir(Person.prototype.__proto__);// Object
+        console.dir(Object.prototype);// Object
+        console.dir(Object.prototype.__proto__);// null
+        // Object是系统的构造函数，里面就应该有prototype，又是对象，对象里面就应该有__proto__，最终这个会指向null
+
+        // 原型链：是实例对象和原型对象之间的关系，是__proto__原型来链接的
+
+        /* 
+            实例对象有__proto__原型
+            构造函数有prototype原型
+            prototype是对象，那么也有__proto__原型
+        */
+    </script>
+</body>
+</html>

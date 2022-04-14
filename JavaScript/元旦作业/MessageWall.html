@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="common.js"></script>
+    <style>
+        body{
+            background-image: url(images/bg.gif);
+        }
+        #box{
+            width: 900px;
+            height: 500px;
+            margin: 100px auto 0;
+            background-image: url(images/content_bg.jpg);
+            position: relative;
+        }
+        .MessageCard{
+            position: absolute;
+            width: 227px;
+            height: 300px;
+            background: url(images/tip1_h.gif) no-repeat top,
+            url(images/tip1_f.gif) no-repeat bottom,
+            url(images/tip1_c.gif) no-repeat 0px 68px/227px 160px;
+            transform-style: preserve-3d;
+        }
+        .close{
+            width: 30px;
+            height: 30px;
+            display: block;
+            position: absolute;
+            text-decoration: none;
+            top: 15px;
+            right: -5px;
+            cursor: pointer;
+        }
+        .name{
+            width:207px;
+            height: 20px;
+            line-height: 20px;
+            position: absolute;
+            top: 50px;
+            left: 10px;
+            color: rgb(123, 75, 75);
+        }
+        .time{
+            width: 207px;
+            height: 20px;
+            line-height: 20px;
+            position: absolute;
+            bottom: 40px;
+            left: 80px;
+            font-size: 12px;
+            color: rgb(79, 79, 79);
+        }
+        .content{
+            width: 207px;
+            height: 160px;
+            line-height: 20px;
+            position: absolute;
+            top: 60px;
+            left: 10px;
+            font-size: 13px;
+            color: rgb(10, 10, 10);
+            overflow: hidden;
+        }
+        .close:hover{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+    </div>
+    <script>
+        data = [
+            {
+                id: 1, 
+                name: "mahu",
+                content: "今天你拿苹果支付了么", 
+                time: "2018-12-17 00:00:00"
+            }, {
+                id: 2, 
+                name: "haha", 
+                content: "今天天气不错，风和日丽的", time: "2019-01-18 12:40:00"
+            }, {
+                id: 3,
+                name: "jjjj",
+                content: "常要说的事儿是乐生于苦", time: "2019-01-18 12:40:00"
+            }, {
+                id: 4, 
+                name: "9.8的妹纸", 
+                content: "把朋友家厕所拉堵了 不敢出去 掏了半小时了都", 
+                time: "2018-03-18 12:40:00"
+            }, {
+                id: 5, 
+                name: "雷锋ii.",
+                content: "元宵节快乐",
+                time: "2009-02-22 12:40:00"
+            }, {
+                id: 6, 
+                name: "哎呦哥哥.", 
+                content: "据说今晚央视的元宵晚会导演和春晚导演是同一个人，真是躲得过初一，躲不过十五。",
+                time: "2018-02-22 01:30:00"
+            }, {
+                id: 7,
+                name: "没猴哥，不春晚",
+                content: "班主任:“小明，你都十二岁了，还是三年级，不觉得羞愧吗”？。小明:“一点也不觉得，老师你都四十多岁了，不也是年年在三年级混日子吗？羞愧的应该是你”。老师:……",
+                time: "2019-02-22 01:30:00"
+            },
+            {
+                id: 8,
+                name: "哎呦杰杰.", 
+                content: "真搞不懂你们地球人，月亮有什么好看的，全是坑，还是对面那哥们好看，",
+                time: "2010-02-22 01:30:00"
+            }, {
+                id: 9,
+                name: "哎呦哎呦", 
+                content: "今天哪里的烟花最好看！！？答：朋友圈。。。",
+                time: "2019-02-22 02:30:00"}
+        ];
+        var box = my$("box");
+        // 创建元素
+        for(var i = 0; i < data.length; i++) {
+            // Message盒子
+            var div = document.createElement("div");
+            div.className = "MessageCard";
+            // 删除按钮
+            var a = document.createElement("a");
+            a.className = "close";
+            // 姓名
+            var divname = document.createElement("div");
+            divname.className = "name";
+            //留言内容
+            var p = document.createElement("p");
+            p.className = "content";
+            // 留言时间
+            var divtime = document.createElement("div");
+            divtime.className = "time";
+            // 放入MessageCard中
+            div.appendChild(a);
+            div.appendChild(divname);
+            div.appendChild(p);
+            div.appendChild(divtime);
+            // MessageCard添加数据
+            for(var key in data[i]){
+                a.innerHTML = "×";
+                divname.innerHTML = data[i]["name"];
+                p.innerHTML = data[i]["content"];
+                divtime.innerHTML = data[i]["time"];
+            }
+            // 设置MessageCard的位置
+            div.style.top = Math.floor(Math.random()*300) + "px";
+            div.style.left = Math.floor(Math.random()*600) + "px";
+            div.style.transform = "ratate(" + Math.floor(Math.random()*30) + "deg)";
+            box.appendChild(div);
+
+            // 点击浮在最顶层
+            div.onclick = function(){
+                for(var j = 0; j < box.children.length; j++) {
+                    box.children[j].style.zIndex = 0;
+                }
+                this.style.zIndex = 1;
+            }
+            //删除MessageCard
+            a.onclick = function(){
+                this.parentElement.parentElement.removeChild(this.parentElement);
+            }
+        }
+        //右键
+   </script>
+</body>
+</html>

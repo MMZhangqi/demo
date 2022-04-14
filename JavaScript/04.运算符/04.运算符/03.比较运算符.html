@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            比较运算符（关系运算符）用于比较两个值的大小，然后返回一个布尔值，表示是否满足指定条件
+                - 注意：比较运算符可以比较各种类型的值，不仅仅是数值
+            JavaScript一共提供了8个比较运算符
+                - >：大与运算符
+                - <：小与运算符
+                - >=：大与等于运算符
+                - <=：小与等于运算符
+                - ==：相等运算符，比较两个值是否相等
+                - ===：严格相等运算符，比较两个值是否为“同一个值”
+                - !=：不相等运算符
+                - !==：严格不相等运算符
+        */
+
+        console.log(1 > 2);
+        var age = 88;
+        console.log(age >= 18);
+
+        console.log('cat' > 'dog');// false
+        // 比较的是Unicode码点
+        console.log('cat' > 'Cat');// true
+        console.log('大' > '小');// false
+
+        console.log(5 > '4');// true
+
+        console.log(1 > NaN);// false
+        console.log(1 <= NaN);// false
+        console.log('1' > NaN);// false
+        console.log('1' <= NaN);// false
+        console.log(NaN > NaN);// false
+        console.log(NaN <= NaN);// false
+
+        console.log(5 == '5');// true
+        console.log(5 === '5');// false
+    </script>
+</body>
+</html>

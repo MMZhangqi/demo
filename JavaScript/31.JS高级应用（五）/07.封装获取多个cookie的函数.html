@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(document.cookie);
+        // 已存入：tel=13333333333; 姓名=Cherry; qq=1225532215; Hm_lvt_af2ca88e2c7a0d358a5a1130270ea7cf=1639561202; Hm_lvt_48f745cc9872cc90f47b2b33eaa85e45=1639561202; _pk_id.7.dc78=49372babe04ac2c1.1639561202.
+        function setCookie(name, value, time) {
+            var dt = new Date();
+            // 设置过期时间
+            dt.setHours(dt.getHours() - 8);
+            dt.setMinutes(dt.getMinutes() + time);
+            document.cookie = name + "="+ value +"; expires=" + dt;
+        }
+        setCookie("qq", "1225532215", "30");
+
+        // 封装读取cookie的值
+        // @params：name
+        function getCookie(name) {
+            // 1.判断用户是否首次进入，是的话，没有cookie，返回空字符串
+            if(document.cookie.indexOf(name) != -1) {
+                // 取值
+                var start = document.cookie.indexOf(name);// name所对应的索引值
+                start = start + 1 + name.length;
+                var end = document.cookie.indexOf(";", start);
+                // 如果找不到，会返回-1
+                if(end == -1) {
+                    // 没有分号，也是cookie的长度
+                    end = document.cookie.length;
+                }
+                return document.cookie.substring(start, end);
+            }else {
+                return "";
+            }
+        }
+
+        // 封装读取多个cookie的值
+        function getCookies() {
+            console.log(arguments);
+            // 判断有没有传cookie的名称
+            if(arguments.length > 0) {
+                var values = [];
+                for(var i = 0; i < arguments.length; i++) {
+                    // 存放每一个cookie的名字
+                    var names = arguments[i];
+                    var value = getCookie(names);
+                    values.push(value);
+                }
+                return values;
+            }
+        }
+        console.log(getCookies("tel", "qq", "姓名"));
+    </script>
+</body>
+</html>

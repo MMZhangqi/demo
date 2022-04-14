@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">点击跳转04.location对象.html</button>
+    <button id="btn2">点击前进一个历史记录</button>
+
+    <script src="common.js"></script>
+    <script>
+        my$("btn1").onclick = function() {
+            location.href = "04.location对象.html";
+        }
+        my$("btn2").onclick = function() {
+            // console.log(window.history);
+            // 前进一个历史记录
+            // window.history.forward();// history.go(1)
+            // 返回一个历史纪录
+            // history.back();// history.go(-1)
+            history.go(-1);
+        }
+    </script>
+</body>
+</html>

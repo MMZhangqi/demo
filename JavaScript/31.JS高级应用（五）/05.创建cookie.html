@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            cookie：用于存储页面的用户信息
+            例子：自动登录，记住用户名、记住密码
+            特征：
+                1.同一个网站的所有页面共享一套cookie
+                2.数量大小有限：一般是4k，只能文本1M = 1024K，1K = 1000+bit（字节）或者500+汉字
+                3.有过期时限：①临时性质的cookie   ②设置失效的时间的cookie
+        */
+
+        // 1.在文档中创建cookie   document.cookie = "名字=值"，键值对的方式书写
+
+        // ① 创建临时cookie ---> 关闭浏览器消失，跟注释没有任何关系
+        // document.cookie = "nusername1=张三";
+        // alert(document.cookie);
+
+        // ② 设置失效的时间三天后过期的cookie  document.cookie = "名字=值; expires=过期时间";
+        var dt = new Date();
+        // 设置日期 setDate()
+        dt.setHours(dt.getHours() - 8);
+        dt.setMinutes(dt.getMinutes() + 1);
+        // console.log(dt);
+        // document.cookie = "username=Cherry; expires=" + dt;
+        alert(document.cookie);
+    </script>
+</body>
+</html>

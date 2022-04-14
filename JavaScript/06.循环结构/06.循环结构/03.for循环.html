@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // while和do...while一般用来解决无法确认次数的循环，for循环一般在循环次数确定的时候比较方便
+        /* 
+            for循环语法：
+                for(计数器; 循环条件; 迭代条件) {
+                    循环体;
+                }
+                或
+                for(初始化表达式1; 判断表达式2; 自增表达式3) {
+                    循环体4;
+                }
+
+                1-初始化表达式（initialize）：确定循环变量的初始值，只在循环开始的时候执行一次。
+                2-判断（条件）表达式（test）：每轮循环开始时，都要执行这个条件表达式，只有值为true，才继续进行循环。
+                3-自增表达式（increment）：每轮循环的最后一个操作，通常用来递增循环变量。
+
+                执行顺序：1243 --- 243 --- 243... ...（直到循环条件变为false）
+        */
+
+        /* for(var i = 0; i <= 100; i++) {
+            console.log("强哥跑了" + i + "圈");
+        } */
+
+        // 1-100整数和
+        var sum = 0
+        for(var i = 1; i <= 100; i++) {
+            sum += i;
+        }
+        console.log(sum);
+
+        // 1-100奇数和偶数和
+        var sum1 = 0, sum2 = 0;
+        for(var i = 1; i <= 100; i++) {
+            if(i % 2 == 0) {
+                sum1 += i;
+            }else {
+                sum2 += i;
+            }
+        }
+        console.log('1-100之间奇数和是：' + sum2, '1-100之间偶数和是：' + sum1);
+
+        // 1-100能被3整除的数的和
+        var sum = 0;
+        for(var i = 0; i <= 100; i++) {
+            if(i % 3 == 0) {
+                sum += i;
+            }
+        }
+        console.log(sum);
+    </script>
+</body>
+</html>

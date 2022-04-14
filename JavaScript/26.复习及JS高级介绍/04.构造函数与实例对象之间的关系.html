@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+            this.eat = function() {
+                console.log("在人民广场吃炸鸡");
+            }
+        }
+        
+        var per1 = new Person("小明", 18);
+        per1.eat();
+
+        // 关系：实例对象是由构造函数创建的
+
+        // console.dir();// 打印对象的结构
+        // constructor 构造器
+        console.log(per1);
+        console.dir(per1);
+        console.dir(per1.__proto__.constructor == Person);// true
+        // 说明实例对象中的构造器指向了构造函数
+        // 证明：实例对象是由构造函数创建的
+        console.dir(Person);
+
+        /* 
+            关系：
+                1.实例对象是由构造函数创建的
+                2.判断这种对象是不是该数据类型：
+                    ① 对象 instanceof 构造函数的名字
+                    ② 通过构造器的方式，看他指向谁
+        */
+    </script>
+</body>
+</html>

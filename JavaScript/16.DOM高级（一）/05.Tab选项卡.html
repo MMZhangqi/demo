@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #box {
+            width: 600px;
+            height: 300px;
+            /* background-color: pink; */
+            margin: 100px auto 0;
+        }
+        #header {
+            height: 40px;
+            line-height: 40px;
+            font-size: 0px;
+        }
+        #header>span {
+            display: inline-block;
+            font-size: 22px;
+            font-weight: 500;
+            width: 100px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #ccc;
+        }
+        #header>span.now {
+            background-color: #eee;
+        }
+        #header>span:hover {
+            background-color: #eee;
+        }
+        #content>li {
+            list-style: none;
+            background-color: #eee;
+            display: none;
+            height: 260px;
+        }
+        #content>li.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="header">
+            <span class="now">HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>Vue</span>
+            <span>React</span>
+            <span>Angular</span>
+        </div>
+        <ul id="content">
+            <li class="active">Hyper Text Markup Language</li>
+            <li>Cascading Style Sheets</li>
+            <li>ECMAScript DOM BOM</li>
+            <li>vue-cli vue-router</li>
+            <li>JSX</li>
+            <li>Angular</li>
+        </ul>
+    </div>
+
+    <script>
+        var spans = document.querySelectorAll("#box>#header>span");
+        for(var i = 0; i < spans.length; i++) {
+            spans[i].setAttribute("index", i);
+            spans[i].onclick = function() {
+                for(var j = 0; j < spans.length; j++) {
+                    spans[j].className = "";
+                }
+                this.className = "now";
+                // 显示当前被点击的模块内容
+                // 获取对应的存储的索引值
+                var lis = document.querySelectorAll("#content>li");
+                var index = this.getAttribute("index");
+                // 所有模块隐藏
+                for(var k = 0; k < lis.length; k++) {
+                    lis[k].removeAttribute("class");
+                }
+                // 显示对应的模块
+                lis[index].className = "active";
+            }
+        }
+    </script>
+</body>
+</html>

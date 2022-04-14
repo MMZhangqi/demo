@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点击</button>
+
+    <script src="common.js"></script>
+    <script>
+        // my$("btn").onclick = function() {
+        //     console.log(111);
+        // }
+
+        /* 
+            1.对象.addEventListener("事件类型", 事件处理函数, false（默认值）);IE8不支持
+            2.对象.attachEvent("有on的事件类型", 事件处理函数);chrome和Firefox不支持，是IE特有的方法
+        */
+
+        // my$("btn").addEventListener("click", function() {
+        //     console.log(222);
+        // })
+        my$("btn").attachEvent("onclick", function() {
+            console.log(333);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            2.自定义构造函数创建对象 ---> 自己定义一个构造函数
+            函数和构造函数的区别：构造函数的名字首字母大写
+        */
+
+        // ① 创造一个构造函数
+        function Person(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+            this.sayHello = function() {
+                console.log("hello!");
+                console.log(this);// 谁调用，this就指向谁
+            }
+        }
+
+        // ② 实例化对象
+        var qiang = new Person("强哥", 16, "男");
+        // console.log(qiang);
+        var xiang = new Person("唐小翔", 3, "男");
+        // console.log(xiang);
+
+        qiang.sayHello();
+        xiang.sayHello();
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建指定时间
+        var dt = new Date("2011-11-30 20:42:12");
+        console.log(dt);
+
+        // 获取当前时间，创建一个实例对象
+        var dt2 = new Date();
+        console.log(dt2);
+
+        // 获取毫秒数，1秒=1000毫秒（时间戳）
+        // dt2实例对象调用getTime()方法获取时间戳
+        console.log(dt2.getTime());// 从1970-01-01-00:00:00到现在的毫秒数
+        // 直接调用Date的now()方法获取时间戳
+        console.log(Date.now());
+        // 利用valueOf()方法的特性<返回给定参数的Number对象值>获取时间戳
+        console.log(dt2.valueOf());
+
+        // 年份
+        console.log(dt2.getFullYear());// 2021
+        // 月份
+        console.log(dt2.getMonth() + 1);// 10  从0开始0-11
+        // 日期
+        console.log(dt2.getDate());// 30
+        // 星期
+        console.log(dt2.getDay());
+        // 时分秒
+        console.log(dt2.getHours());
+        console.log(dt2.getMinutes());
+        console.log(dt2.getSeconds());
+
+        console.log(dt2.toTimeString());// 时:分:秒 GMT+0800 (中国标准时间)
+        console.log(dt2.toLocaleTimeString());// 12小时制的时分秒
+
+        console.log(dt2.toDateString());// 英文日期
+        console.log(dt2.toLocaleDateString());// 年/月/日
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            继承：是一种关系，父类与子类的继承关系，通过原型来实现继承，继承也是为了共享数据
+
+            父亲：大明，有钱、有功夫、有房、有地
+            儿子：小明，继承钱、继承功夫、继承房、继承地
+        */
+
+        function Person(name, money, house) {
+            this.name = name;
+            this.money = money;
+            this.house = house;
+        }
+        Person.prototype.kongfu = function() {
+            console.log("太极、咏春");
+        }
+        var father = new Person("大明", "100块", "乡间大别野");
+
+        function SmallPer(score) {
+            this.score = score;
+        }
+        SmallPer.prototype = new Person("小明", "1块", "大别野的卫生间");
+        SmallPer.prototype.study = function() {
+            console.log("学习");
+        }
+        var son = new SmallPer("99分");
+        console.log(son.name, son.money, son.score);
+        son.study();
+        son.kongfu();
+    </script>
+</body>
+</html>

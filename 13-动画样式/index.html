@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width: 0;
+            height: 1px;
+            position: fixed;
+            margin: 200px auto 0;
+            left: 35%;
+            border-color:red transparent ;
+            border-width: 110px 110px 0px;
+            border-style: solid;
+            animation: aninmation 1s ease 0s infinite alternate backwards;
+        }
+        div::after{
+            width: 150px;
+            height: 150px;
+            display: block;
+            content: "";
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            left: -29px;
+            top: -225px;
+        }
+        div::before{
+            width: 150px;
+            height: 150px;
+            display: block;
+            content: "";
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            left: -122px;
+            top: -225px;
+        }
+        @keyframes aninmation {
+            from{
+                top: 0px;
+            }
+            to{
+                top: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

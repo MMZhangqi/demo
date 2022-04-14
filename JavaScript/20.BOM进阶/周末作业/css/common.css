@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+fieldset,
+img {
+  margin: 0;
+  border: 0;
+}
+li {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+body,
+button,
+input,
+select,
+textarea {
+  font: 12px/1.5 tahoma, sans-serif;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+.clear {
+  clear: both;
+}
+.pr {
+  position: relative;
+}
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+body{
+  background-color: #f9f9f0;
+    overflow-x: hidden;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}

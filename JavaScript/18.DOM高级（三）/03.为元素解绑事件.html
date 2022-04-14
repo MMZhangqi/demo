@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">按钮1</button>
+    <button id="btn2">干掉第一个按钮的事件</button>
+
+    <script src="common.js"></script>
+    <script>
+        // my$("btn1").onclick = function() {
+        //     console.log(8888);
+        // }
+
+        // my$("btn2").onclick = function() {
+        //     // 方法一：直接重新赋值为null
+        //     my$("btn1").onclick = null;
+        // }
+
+        /* // 方法二：removeEventListener("事件类型", "解绑的事件函数", false);IE8不支持
+        function f1() {
+            console.log(11111111);
+        }
+        function f2() {
+            console.log(222222222);
+        }
+        my$("btn1").addEventListener("click", f1);
+        my$("btn2").addEventListener("click", f2);
+        my$("btn2").addEventListener("click", function() {
+            // 解绑第一个按钮的事件，要知道解绑的函数名
+            my$("btn1").removeEventListener("click", f1);
+        }); */
+
+        function f1() {
+            console.log(11111111);
+        }
+        function f2() {
+            console.log(222222222);
+        }
+        my$("btn1").attachEvent("onclick", f1);
+        my$("btn2").attachEvent("onclick", f2);
+        my$("btn2").attachEvent("onclick", function() {
+            // 方法三：detachEvent("带on的事件类型", 要解绑的函数名) IE8特有的
+            my$("btn1").detachEvent("onclick", f1);
+        })
+    </script>
+</body>
+</html>

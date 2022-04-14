@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: lightblue;
+        }
+
+        #box {
+            width: 408px;
+            height: 482px;
+            /* background-color: pink; */
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            font-size: 0;
+        }
+
+        #box>img:nth-of-type(1) {
+            transform: translate(-100px, -200px) rotate(20deg) skew(18deg);
+        }
+
+        #box>img:nth-of-type(2) {
+            transform: rotate(-130deg) translate(-400px, 100px);
+        }
+
+        #box>img:nth-of-type(3) {
+            transform: skew(-18deg) rotate(-70deg) translate(300px, 200px);
+        }
+
+        #box>img:nth-of-type(4) {
+            transform: translate(-180px, 400px) rotate(20deg) skew(18deg);
+        }
+
+        #box>img:nth-of-type(5) {
+            transform: translate(-200px, 90px) rotate(200deg) skew(17deg);
+        }
+
+        #box>img:nth-of-type(6) {
+            transform: translate(-50px, -70px) rotate(20deg) skew(18deg);
+        }
+
+        #box>img:nth-of-type(7) {
+            transform: translate(-300px, -200px) rotate(20deg) skew(18deg);
+        }
+
+        #box>img:nth-of-type(8) {
+            transform: translate(80px, -40px) rotate(20deg) skew(18deg);
+        }
+
+        #box>img:nth-of-type(9) {
+            transform: translate(160px, 300px) rotate(20deg) skew(18deg);
+        }
+
+        #box>img {
+            transition: transform 1s;
+        }
+
+        #box:hover>img {
+            transform: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <img src="images/shield_1_01.png" alt="">
+        <img src="images/shield_1_02.png" alt="">
+        <img src="images/shield_1_03.png" alt="">
+        <img src="images/shield_1_04.png" alt="">
+        <img src="images/shield_1_05.png" alt="">
+        <img src="images/shield_1_06.png" alt="">
+        <img src="images/shield_1_07.png" alt="">
+        <img src="images/shield_1_08.png" alt="">
+        <img src="images/shield_1_09.png" alt="">
+    </div>
+</body>
+</html>

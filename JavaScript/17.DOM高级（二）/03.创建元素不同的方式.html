@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点击创建</button>
+    <div id="box"></div>
+
+    <script>
+        /* 
+            元素的创建--->为了提高用户体验
+            三种方式：
+            1.document.write("标签的代码及内容") ---> 缺陷：页面上所有的静态结构会被全部覆盖，页面重构
+            2.对象.innerHTML = "标签及内容"
+            3.document.createElemrnt("标签名")
+        */
+
+        document.getElementById("btn").onclick = function() {
+            // document.write("<p>这是一个p标签</p>");
+            document.getElementById("box").innerHTML = "<h1>大标题</h1>";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .box{
+            width: 400px;
+            height: 200px;
+            margin: 200px auto 0;
+        }
+        .header{
+            width: 100%;
+            height: 40px;
+            background-color: antiquewhite;
+            display: flex;
+            justify-content:space-around;
+        }
+        .header>span{
+            cursor: pointer;
+            display: inline-block;
+            width: 20%;
+            height: 100%;
+            line-height: 40px;
+            text-align: center;
+            background-color: antiquewhite;
+        }
+        .header>span.cricle{
+            background-color: rgb(186, 95, 95);
+        }
+        .header>span:hover{
+            background-color: rgb(186, 95, 95);
+        }
+        .box>ul>li{
+            list-style: none;
+            background-color: #eee;
+            display: none;
+            height: 260px;
+        }
+        .box>ul>li.active{
+          display: block;  
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="header">
+            <span class="cricle">html</span>
+            <span>css</span>
+            <span>js</span>
+            <span>vue</span>
+            <span>react</span>
+        </div>
+        <ul>
+            <li class="active">我爱html</li>
+            <li>css样式叠层表</li>
+            <li>js JavaScript</li>
+            <li>vue Vue框架</li>
+            <li>react React</li>
+        </ul>
+    </div>
+    <script>
+        var spans = document.querySelectorAll(".box>.header>span");
+        for(var i = 0; i < spans.length; i++)
+        {
+            // 给每个span添加一个自定义属性
+            spans[i].setAttribute("index", i);
+            spans[i].onclick = function(){
+                for(var j = 0; j < spans.length; j++)
+                {
+                    spans[j].className = "";
+                }
+                this.className = "cricle";
+                var lis = document.querySelectorAll(".box>ul>li");
+                // 获取当前点击span的索引值
+                var index = this.getAttribute("index");
+                for(var k = 0; k < lis.length; k++)
+                {
+                    lis[k].removeAttribute("class");
+                }
+                lis[index].className = "active";
+            }
+        }
+    </script>
+</body>
+</html>

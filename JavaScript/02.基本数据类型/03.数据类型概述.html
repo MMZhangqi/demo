@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            一、JavaScript的数据类型：
+                - 数值（number）：整数和小数/浮点数
+                - 字符串（string）：文本（Hello World!）
+                - 布尔值（boolean）：表示真伪的两个特殊值，即true（真）和false（假）
+                - undefined：表示“未定义”或不存在，即由于目前没有定义，所以此处暂时没有任何值，当声明变量，没有赋值，此事结果就是undefined
+                - null：表示空值，即此处值为空
+                - 对象（object）：各种值组成的集合
+
+                1.原始类型：number、string、boolean
+                2.合成类型：object
+                3.特殊值：undefined、null
+
+                对象的子类型：
+                    - 狭义的对象（object）
+                    - 数组（array）
+                    - 函数（function）
+            
+            二、JavaScript确定一个值是什么类型的方法
+                - typeof运算符：可以返回一个值的数据类型
+                - instanceof运算符
+                - Object.prototype.toString方法
+
+                1.数值、字符串、布尔值返回值分别是number、string、boolean
+                2.函数返回function
+                3.undefined返回undefined
+                4.对象返回object
+                5.null返回object，历史遗留问题
+        */
+        var num = 10;
+        var pai = 3.14;
+        var str1 = "30";
+        var str2 = "Cherry";
+        var flag = true;
+        var unde;
+        var obj = new Object();
+        var arr = [];
+        function f() {};
+        var $null = null;
+
+        console.log(typeof num);// number
+        console.log(typeof pai);// number
+        console.log(typeof str1);// string
+        console.log(typeof str2);// string
+        console.log(typeof flag);// boolean
+        console.log(typeof unde);// undefined
+        console.log(typeof obj);// object
+        console.log(typeof arr);// object
+        console.log(typeof f);// function
+        console.log(typeof $null);// object
+    </script>
+</body>
+</html>

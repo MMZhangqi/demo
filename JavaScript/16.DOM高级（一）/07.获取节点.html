@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <p class="pObj">pppp</p>
+        <span>sssssssss</span>
+        <input type="text">
+        <a href=""></a>
+        <ul id="uuObj">
+            <li>111</li>
+            <li>222</li>
+            <li id="third">333</li>
+            <li>444</li>
+        </ul>
+    </div>
+
+    <script>
+        var box = document.getElementById("box");
+        console.log(box.childNodes);// 子节点，伪数组
+        console.log(box.children);// 子元素，伪数组
+        console.log(box.parentNode);// 父节点，js对象
+        console.log(box.parentElement);// 父元素，js对象
+
+        console.log("================================");
+
+        var uuObj = document.getElementById("uuObj");
+        console.log(uuObj.firstChild);// 第一个子节点
+        console.log(uuObj.firstElementChild);// 第一个子元素
+        console.log(uuObj.lastChild);// 最后一个子节点
+        console.log(uuObj.lastElementChild);// 最后一个子元素
+
+        console.log("================================");
+
+        var three = document.getElementById("third");
+        console.log(three.previousSibling);// 前一个兄弟节点
+        console.log(three.previousElementSibling);// 前一个兄弟元素
+        console.log(three.nextSibling);// 前一个兄弟节点
+        console.log(three.nextElementSibling);// 前一个兄弟元素
+    </script>
+</body>
+</html>

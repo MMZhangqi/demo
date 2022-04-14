@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            perspective: 1000px;
+        }
+        #box {
+            width: 700px;
+            height: 500px;
+            margin: 100px auto 0;
+            background-color: rgba(255, 192, 203, .3);
+            /* 景深、视距：添加Z轴 */
+            perspective: 1000px;
+            transform: rotateY(-45deg);
+            /* 辅助查看3D视图 */
+            transform-style: preserve-3d;
+        }
+
+        #box>div {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            transform: translateZ(-300px);
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div></div>
+    </div>
+</body>
+</html>

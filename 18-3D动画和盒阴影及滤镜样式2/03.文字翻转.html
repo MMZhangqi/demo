@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        span {
+            font-size: 200px;
+            font-weight: bolder;
+            margin: 50px;
+            color: pink;
+            position: relative;
+        }
+
+        span::before,
+        span::after {
+            content: attr(data-txt);
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform-origin: left;
+            transition: all 1s;
+        }
+
+        span::before {
+            color: #eee;
+            z-index: 3;
+            transform: rotateY(-20deg);
+        }
+
+        span::after {
+            color: #ccc;
+            z-index: -2;
+            transform: scale(1.1, 1);
+        }
+
+        span:hover::before {
+            transform: rotateY(-45deg) skew(0deg, 3deg);
+        }
+
+        span:hover::after {
+            transform: rotateY(45deg) skew(0deg, 15deg);
+        }
+    </style>
+</head>
+<body>
+    <span data-txt="前">前</span>
+    <span data-txt="端">端</span>
+    <span data-txt="学">学</span>
+    <span data-txt="院">院</span>
+</body>
+</html>

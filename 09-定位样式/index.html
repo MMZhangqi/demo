@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .contianer{
+            width: 1226px;
+            margin: auto;
+        }
+        .box{
+            width: 1226px;
+            height: 460px;
+            margin: auto;
+            background-image: url(images/background-img.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: relative;
+        }
+        .show_list{
+            width: 234px;
+            height: 460px;
+            background-color: rgba(105,101,101,.6);
+            list-style-type: none;
+            padding: 20px 0;
+        }
+        .show_list>li{
+            height: 42px;
+            padding-left: 20px;
+            font-size: 14px;
+            line-height: 42px;
+        }
+        .show_list>li a{
+            text-decoration: none;
+            color: #fff;
+        }
+        .show_list>li>a>div{
+            margin-right: 10px;
+            width: 100px;
+            float: left;
+        }
+        .show_list>li>a>span{
+            margin-left: 80px;
+        }
+        .show_good{
+            height: 460px;
+            width: 400px;
+            position: absolute;
+            left: 234px;
+            top: 0px;
+            /* 隐藏 */
+            display: none;
+        }
+        .show_good ul{
+            list-style-type: none;
+            width: 248px;
+            height: 460px;
+            position: absolute;
+        }
+        .show_good ul li{
+            width: 248px;
+            height: 76.7px;
+            background-color: white;
+        }
+        .show_good .col2{
+            margin-left: 248px;
+        }
+        .show_good .col3{
+            margin-left: 496px;
+        }
+        .show_good .col4{
+            margin-left: 744px;
+        }
+        /* 鼠标悬停 */
+        .show_list>li:hover{
+            background-color: #ff6700;
+        }
+        .show_list>li:hover .show_good{
+            display: block;
+        }
+        /* 商品排版 */
+        .show_good>ul>li>a>img{
+            width: 30px;
+            height: 30px;
+            margin-left: 30px;
+            vertical-align:middle;
+        }
+        .show_good>ul>li>a>span{
+            margin-left: 10px;
+            line-height: 76.6px;
+            color: black;
+            font-size: 13px;
+        }
+        .show_good>ul>li:hover>a>span{
+            color: #ff6700;
+        }
+    </style>
+</head>
+<body>
+    <div class="contianer">
+        <div class="box">
+            <ul class="show_list">
+                <li>
+                    <a href="#">
+                        <div class="typegood">手机</div>
+                        <span>&gt;</span>
+                    </a>
+                    <div class="show_good">
+                        <ul class="col1">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi MIX 4.png" alt="">
+                                    <span>Xiaomi MIX 4</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/小米MIX FOLD.png" alt="">
+                                    <span>小米MIX FOLD</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a1241b5a94ba1739e85f72d46592af0e.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>小米11 UItar</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6cf44dfe89111cb35e1a2211481ff546.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>小米11 Pro</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/72bd70039670d29610569421f753fcb6.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>小米11 青春</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col2">
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c89e7b3a3495acaa0a4df271d9da59ea.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>小米 10S</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c89e7b3a3495acaa0a4df271d9da59ea.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>小米 11</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4a7a4f24061860901f724b6ba6d75fd9.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>小米 10</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0dfda044e0ddcfb3ef63e7e2b87daea3.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>黑鲨4 Pro</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7b7e7228d1708665b7e6fe5e07ad4929.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>黑鲨4</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/69a0df49cff71107977bbe3b48af15fa.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>Redmi K30S 至尊纪念版</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col3">
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/8ade0163e9fdbd92a4b7d7ee3aeab905.jpg?thumb=1&w=60&h=60" alt="">
+                                    <span>小米云服务</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0803dc7125ffa3447b04b1ae60f57a2b.jpg?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>Redmi K30 至尊纪念版</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/56bb7e2d44cef71c3afedaeae3d98927.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>Note 10 Pro</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/79e2935264bf9247aa7512e330112820.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>Note 10 5G</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ab956ee82c24bdd83d21bc212aad3eb5.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>K40 游戏增强版</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0e5aa3cab478f5eeba1c7d4cf25cba9a.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>K40 Pro 系列</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col4">
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/92fdd051100722d25323e9bd188befc5.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>Redmi K40</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/77bfd346ad97807237beca297cfe2fba.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>Redmi 8A</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/76378ce289a36fcfa29f704ba90b4155.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>Redmi Note 9 Pro</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/970c6b287eb89620f5ee8e2b347f6f3d.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>Redmi Note 9 5G</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/947721c8bc4a4ecc3bca17237ee64dea.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>Redmi Note 4 4G</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1db88cd66ff1a6a3e75116988b7f3e12.jpg?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>Redmi 9A</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="typegood">电视</div>
+                        <span>&gt;</span>
+                    </a>
+                    <div class="show_good">
+                        <ul class="col1">
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/50194366cfebbc7c82489d0094c1f944.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>小米电视6 55” OLED</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/50194366cfebbc7c82489d0094c1f944.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>小米电视6 65” OLED</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b91c9ef670fa1c12eddf23b209f9ff33.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>小米电视 大师77” OLED</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/aa3954f817a23443c0b6b523ebbd09f6.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>小米电视6 至尊版 55英寸</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/aa3954f817a23443c0b6b523ebbd09f6.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>小米电视6 至尊版 65英寸</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/aa3954f817a23443c0b6b523ebbd09f6.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>小米电视6 至尊版 75英寸</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col2">
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1c0d83dd59a3dd91372d867864b35554.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>小米电视 ES43 2022款</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1c0d83dd59a3dd91372d867864b35554.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>小米电视 ES55 2022款</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1c0d83dd59a3dd91372d867864b35554.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>小米电视 ES65 2022款</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1c0d83dd59a3dd91372d867864b35554.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>小米电视 ES75 2022款</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/319700f48d268f522664e1fc876b0044.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>小米全面屏电视E43K</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d219d8b9c4a74eda4ae6c0222d194cd2.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>金属全面屏电视</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col3">
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/554a4f8ea0c2c3ed19d843bea7321203.jpg?thumb=1&w=60&h=60" alt="">
+                                    <span>小米盒子</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7da49e7ada2229c963c9c7353a58d49b.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>大师电视 65英寸 OLED</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/da1680fb62238cb5b01998d80fc34e25.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>小米电视5 Pro 75英寸</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1df560d16cc983b0f34d24fc484bd697.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>小米电视4A 60英寸</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/070b329c18c1ab167df2a42564a67813.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>Redmi 智能电视 X55</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/8aeae36f5d088f22c84b8953bd0d08b4.jpg?thumb=1&w=60&h=60" alt="">
+                                    <span>小米全面屏电视</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col4">
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ce75f4a3fef148b6729061a18f994aa7.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>米家激光投影仪</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9d649ec3d7d14da7090e396d56b7cc92.jpg?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>Redmi 智能电视 MAX 98”</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d707cdac2a19703b57e65212f32fd25b.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>小米电视5 75英寸</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6797917392e912577135d9eb8ad92f1f.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>小米电视4A 70英寸</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8cb5791161d8b25897f60385f0ec7ab2.png?thumb=1&w=60&h=60&f=webp&q=90" alt="">
+                                    <span>小米电视4S 75英寸</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/5732e8f317eb86bfcb174fbb49d00c4a.jpg?thumb=1&w=60&h=60" alt="">
+                                    <span>小米壁画电视</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                        <div>笔记本 平板</div>
+                        <span>&gt;</span>
+                    </a>
+                    <div class="show_good">
+                        <ul class="col1">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col2">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col3">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col4">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="typegood">家电</div>
+                        <span>&gt;</span>
+                    </a>
+                    <div class="show_good">
+                        <ul class="col1">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col2">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col3">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col4">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="typegood">出行 穿戴</div>
+                        <span>&gt;</span>
+                    </a>
+                    <div class="show_good">
+                        <ul class="col1">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col2">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col3">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>   
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="typegood">智能 路由器</div>
+                        <span>&gt;</span>
+                    </a>
+                    <div class="show_good">
+                        <ul class="col1">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col2">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col3">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="typegood">电源配件</div>
+                        <span>&gt;</span>
+                    </a>
+                    <div class="show_good">
+                        <ul class="col1">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col2">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col3">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col4">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="typegood">健康 儿童</div>
+                        <span>&gt;</span>
+                    </a>
+                    <div class="show_good">
+                        <ul class="col1">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col2">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col3">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col4">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="typegood">耳机 音箱</div>
+                        <span>&gt;</span>
+                    </a>
+                    <div class="show_good">
+                        <ul class="col1">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col2">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col3">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col4">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="typegood">生活 箱包</div>
+                        <span>&gt;</span>
+                    </a>
+                    <div class="show_good">
+                        <ul class="col1">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col2">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col3">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="col4">
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/Xiaomi Civi.png" alt="">
+                                    <span>Xiaomi Civi</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

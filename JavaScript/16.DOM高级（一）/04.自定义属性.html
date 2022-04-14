@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ulObj">
+        <li score="99" class="zjk">庄哥的英语成绩</li>
+        <li score="88">川哥的数学成绩</li>
+        <li score="100">晶晶宝贝的语文成绩</li>
+        <li score="89">王哥的物理成绩</li>
+        <li score="59">唐小翔的化学成绩</li>
+        <li score="95">沛哥的生物成绩</li>
+        <li score="90">强哥的政治成绩</li>
+        <li score="-100">麒哥的历史成绩</li>
+    </ul>
+
+    <script>
+        /* 
+            * 标签本身没有这个属性，我们自己加的 ---> 自定义属性   目的：存储数据
+            * 获取自定义属性对应的值getAttribute("自定义属性名");
+            * 设置自定义属性setAttribute("属性名", "属性值");
+            * 移除自定义属性removeAttribute("属性名")，可以移除自带属性
+        */
+
+        var lis = document.querySelectorAll("#ulObj>li");
+        for(var i = 0; i < lis.length; i++) {
+            lis[i].setAttribute("index", i);
+            lis[i].onclick = function() {
+                console.log(this.getAttribute("score"));
+                this.removeAttribute("class");
+
+                // 设置类名
+                this.className = "aaa";
+            }
+        }
+    </script>
+</body>
+</html>

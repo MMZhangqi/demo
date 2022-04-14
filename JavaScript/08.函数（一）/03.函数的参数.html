@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            【形参】：函数【定义】的时候小括号里面的【变量】叫形参，形参名自定义
+            【实参】：函数【调用】的时候小括号里面的【值】叫实参，实参的值可以是变量，一般都是固定值
+
+            传值：函数调用的时候，小括号里面的值回传给函数定义时的参数
+        */
+
+        function sum(x, y, z) {
+            if(z == '+') {
+                alert(x + z + y + "=" + (x+y));
+            }else if(z == '-') {
+                alert(x + z + y + "=" + (x-y));
+            }else if(z == '*') {
+                alert(x + z + y + "=" + (x*y));
+            }else if(z == '/') {
+                alert(x + z + y + "=" + (x/y));
+            }else if(z == '%') {
+                alert(x + z + y + "=" + (x%y));
+            }else {
+                alert('请输入正确的运算符号（+ - * / %）!')
+            }
+        }
+        // sum(100, 200);// 100+200=300
+        // sum(300, 500);// 300+500=800
+        // sum();// undefined+undefined=NaN
+        // sum(1, 2, 3);// 1+2=3
+
+        var a = Number(prompt("请输入第一个数字："));
+        var b = Number(prompt("请输入第二个数字："));
+        var c = prompt("请输入运算符号：");
+
+        sum(a, b, c);
+    </script>
+</body>
+</html>

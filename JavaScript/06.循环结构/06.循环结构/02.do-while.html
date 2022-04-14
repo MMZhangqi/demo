@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // do...while循环换和while循环非常像，二者经常可以互相替代，但是do...while的特点是不管条件成不成立，都会先执行一次
+        /* 
+            do...while语法：
+                var i = 0;// 计数器
+                do {
+                    循环体；
+                    迭代条件;
+                }while(循环条件);
+        */
+
+        var i = 100;
+        var sum = 0;
+        do {
+            sum += i;// 循环体
+            i++;
+        }while(i <= 50);
+        console.log(sum);
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <button>apple</button>
+    <button>apple</button>
+    <button>apple</button>
+    <button>apple</button>
+    <button>apple</button>
+    <button>apple</button>
+    <button>apple</button>
+
+    <script>
+        // 所有按钮都有点击事件
+        var btns = document.getElementsByTagName("button");
+        for(var i = 0; i < btns.length; i++) {
+            // console.log(btns[i]);
+            btns[i].onclick = function() {
+                // 先让所有按钮还原默认值
+                for(var j = 0; j < btns.length; j++) {
+                    btns[j].innerText = "apple";
+                    btns[j].style.background = "#ccc";
+                }
+                // 让对应的按钮修改内容
+                this.innerText = "mango";
+                this.style.background = "yellow";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            continue关键字：在循环中遇到continue，直接开始下一次循环，continue后面的内容不会执行
+        */
+
+       /*  var i = 0;
+        while(i < 10) {
+            console.log(i);
+            continue;
+            i++;
+        } */
+
+        /* // 求200-300之间所有奇数的和（用continue）
+        var i = 200;
+        var sum = 0;
+        while(i <= 300) {
+            if(i % 2 == 0) {
+                i++;
+                continue;
+            }
+            sum += i;
+            i++;
+        }
+        console.log(sum);// 12500 */
+
+        // 100-200的累加值，跳过所有个位数为3的数
+        var i = 100;
+        var sum = 0;
+        while(i <= 200) {
+            if(i % 10 == 3) {
+                i++;
+                continue;
+            }
+            sum += i;
+            i++;
+        }
+        console.log(sum);// 13670
+    </script>
+</body>
+</html>

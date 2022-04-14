@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            Array.isArray(对象名) 判断对象是不是数组
+            对象 instanceof 类型
+
+            - .concat(数组1, 数组2, ..., 数组n)组合成新数组
+
+            - .push(值)把值追加到数组的末尾，返回值是追加数据之后数组的长度
+            - .unshift(值)把值追加在数组的前面，返回值是追加数据之后数组的长度
+
+            - .pop()删除数组的最后一个，返回值是删除的这个值
+            - .shift()删除数组的第一个元素，返回值是删除的这个值
+
+            - .every(函数)返回值是布尔类型，函数是用来当作参数使用的，函数中要有三个形参，一假即假
+            - .some(函数)返回值是布尔类型，函数是用来当作参数使用的，函数中要有三个形参，一真即真
+            - .filter(函数)返回值是数组中每一个符合条件的元素，组成一个新数组，函数有三个形参，看成是一个过滤的方法
+            - forEach(函数)遍历数组，想当于一个for循环中有三个形参
+
+            - .indexOf(元素值)返回值是元素对应的索引，找不到返回-1
+            - .join("字符")返回值是通过这个字符连接的一个字符串
+            - .reverse()翻转数组
+            - .sort(函数)排序，不稳定，根据MDN的固定方法
+            - .splice(开始的位置, 要删除的个数, 替换元素的值)一般用于删除数组中的某个元素，或替换元素，或者插入元素
+        */
+
+        // 判断类型
+        var arr = [];
+        console.log(Array.isArray(arr));
+        console.log(arr instanceof Array);
+
+        // 合并
+        var arr1 = [1, 2, 3, 4];
+        var arr2 = [10, 20, 30, 40];
+        console.log(arr2.concat(arr1));
+
+        // 追加
+        console.log(arr1.push(100));
+        console.log(arr1.unshift(200));
+        console.log(arr1);
+
+        // 删除
+        console.log(arr1.pop());
+        console.log(arr1.shift());
+        console.log(arr1);
+
+        // .every(函数)一假即假
+        var arr3 = [5, 10, 15, 20, 25, 30];
+        // ① 要遍历的元素
+        // ② 元素所对应的索引
+        // ③ 要遍历的数组名
+        var flag = arr3.every(function(item, index, arr3) {
+            console.log(item, index, arr3);
+            return item > 100;
+        })
+        console.log(flag);
+
+        // .some(函数)一真即真
+        var flag2 = arr3.some(function(item, index, arr3) {
+            console.log(item, index, arr3);
+            return item > 20;
+        })
+        console.log(flag2);
+
+        // 过滤
+        var arr4 = [1000, 2000, 3000, 4000];
+        var newArr = arr4.filter(function(item, index, arr4) {
+            return item > 2000;
+        })
+        console.log(newArr);
+
+        // .forEach
+        var arr5 = [-1, 0, 7, 99, 85, -18];
+        var sum = 0;
+        arr5.forEach(function(item, index, arr5) {
+            sum += item;
+            console.log(item);
+        })
+        console.log(sum);
+
+        var arr6 = [1, 4, 6, 2, 1, 6, 3, 8];
+        console.log(arr6.indexOf(6));
+        console.log(arr6.join("|"));
+        console.log(arr6.reverse());
+
+        var arr7 = [11, 54, 2, 76, 42, 7];
+        console.log(arr7.sort());
+
+        var arr8 = ["虞姬", "金蝉", "蔡文姬", "伽罗", "明世隐"];
+        // 索引值为2的地方插入孙悟空
+        console.log(arr8.splice(2, 0, "孙悟空"));// 返回值是要删除的元素
+        console.log(arr8);
+
+        // 删除索引值为4
+        console.log(arr8.splice(4, 1));
+        console.log(arr8);
+
+        // 索引值为4的替换为"澜"
+        console.log(arr8.splice(4, 1, "澜", "赵云"));
+        console.log(arr8);
+    </script>
+</body>
+</html>
